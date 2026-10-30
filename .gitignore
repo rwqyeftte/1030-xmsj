@@ -1,0 +1,8 @@
+node_modules/
+dist/
+dist-pages/
+release/
+.npm-cache/
+test-results/
+.env
+.env.*

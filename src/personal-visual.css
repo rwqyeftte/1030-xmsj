@@ -1,0 +1,390 @@
+/* Personal archive: an editorial index around a quiet working surface.
+   This layer changes presentation only; existing routes and data stay intact. */
+.plan-page > .tabs { gap: 25px; }
+.plan-page > .tabs > a {
+  padding: 10px 0;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: #737373;
+}
+.plan-page > .tabs > a.active {
+  border-bottom-color: var(--ink);
+  color: var(--ink);
+  background: transparent;
+  font-weight: 600;
+}
+.personal-shell {
+  grid-template-columns: 190px minmax(0, 1fr);
+  background: var(--paper);
+}
+.personal-nav {
+  background: var(--paper);
+  border-right: 1px solid var(--line);
+  padding: 38px 24px;
+}
+.personal-nav > .eyebrow {
+  display: block;
+  font-size: 12px;
+  letter-spacing: .12em;
+}
+.personal-nav > h2 {
+  margin: 9px 0 30px;
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: .04em;
+}
+.personal-nav nav { gap: 0; margin: 0 0 42px; }
+.personal-nav nav a {
+  padding: 15px 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+}
+.personal-nav nav a.active {
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  color: var(--ink);
+  background: transparent;
+  font-weight: 700;
+}
+.personal-nav nav a > span { font-weight: 400; }
+.personal-nav > p { font-size: 12px; line-height: 1.9; color: var(--muted); }
+.personal-page { padding: 38px 38px 64px; }
+.personal-page > .page-head {
+  align-items: center;
+  padding-bottom: 27px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+}
+.personal-page > .page-head h1 {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: .05em;
+  margin: 10px 0 12px;
+}
+.personal-page > .page-head .eyebrow { font-size: 12px; letter-spacing: .08em; }
+.personal-page > .page-head p:last-child { margin-bottom: 0; font-size: 12px; }
+.personal-page > .page-head a:not(.button) { font-size: 12px; }
+.personal-page .panel,
+.plan-page .panel { border-radius: 0; box-shadow: none; border-color: var(--line); }
+.personal-page label,
+.plan-page label { font-size: 12px; color: #555; }
+.personal-page input,
+.personal-page select,
+.personal-page textarea,
+.plan-page input,
+.plan-page select,
+.plan-page textarea { color: var(--ink); border-color: var(--line); border-radius: 0; }
+.personal-page .toolbar { gap: 12px; }
+.personal-page > form.toolbar,
+.personal-page > div.toolbar {
+  padding: 0 0 24px;
+  margin: 0 0 26px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+}
+.personal-page form.toolbar .grow { max-width: 520px; }
+.personal-page .selection-bar {
+  border: 1px solid var(--ink);
+  background: var(--ground);
+  font-size: 12px;
+  padding: 12px 14px;
+}
+
+/* P10: small collection index, with the catalog carrying the visual weight. */
+.library-layout { grid-template-columns: 180px minmax(0, 1fr); gap: 30px; }
+.collection-sidebar.panel {
+  border: 0;
+  border-right: 1px solid var(--line);
+  padding: 0 22px 20px 0;
+  background: transparent;
+  gap: 6px;
+}
+.collection-sidebar > strong { font-size: 12px; letter-spacing: .1em; margin: 4px 0 9px; }
+.collection-sidebar > a,
+.collection-sidebar > button {
+  display: block;
+  text-decoration: none;
+  border: 0;
+  border-left: 1px solid transparent;
+  background: transparent;
+  padding: 8px 9px;
+  text-align: left;
+  font-size: 12px;
+}
+.collection-sidebar > button.active,
+.collection-sidebar > a.active {
+  border-color: var(--ink);
+  background: var(--ground);
+  color: var(--ink);
+  font-weight: 700;
+}
+.collection-sidebar small,
+.collection-sidebar .active small { color: var(--muted); font-size: 12px; margin-top: 4px; font-weight: 400; }
+.collection-sidebar hr { width: 100%; border: 0; border-top: 1px solid var(--line); margin: 14px 0; }
+.library-layout > section > .muted { font-size: 12px; }
+.library-layout .stack { gap: 20px; }
+.personal-page .resource-card { border-color: var(--line); }
+.personal-page .resource-card.compact { border-width: 1px 0 0; padding: 23px 0 16px; }
+.personal-page .resource-card .resource-info h3 { font-family: var(--serif); font-size: 20px; font-weight: 400; }
+.personal-page .resource-foot {
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  font-size: 12px;
+  padding: 0 0 16px;
+}
+.personal-resource-grid { gap: 24px; }
+.personal-resource-grid > article { min-width: 0; }
+.personal-resource-grid .resource-card { flex-direction: column; height: auto; padding: 0; }
+.personal-resource-grid .resource-card > .card-select { position: absolute; top: 12px; right: 12px; z-index: 1; }
+.personal-resource-grid .resource-card .resource-placeholder { width: 100%; min-height: 200px; border-width: 0 0 1px; }
+.personal-resource-grid .resource-info { padding: 20px; }
+.personal-resource-grid .resource-foot { border: 1px solid var(--line); border-top: 0; padding: 12px 20px; }
+
+/* P11–P12: notes read as entries, and editing reads as a document. */
+.personal-page .note-list-row.panel {
+  border-width: 0 0 1px;
+  padding: 24px 0 28px;
+  background: transparent;
+  gap: 26px;
+}
+.note-list-row > div:first-child { min-width: 0; }
+.personal-page .note-list-row h2 {
+  font-family: var(--serif);
+  font-size: 23px;
+  font-weight: 400;
+  margin: 13px 0 12px;
+}
+.note-list-row h2 a { text-decoration: none; }
+.note-list-row p { color: #555; font-size: 13px; line-height: 1.85; max-width: 64ch; }
+.note-list-row .source-line { padding-left: 13px; border-left: 1px solid var(--line); font-size: 12px; line-height: 1.8; }
+.note-list-row small,
+.note-list-row .muted { font-size: 12px; }
+.personal-with-panel { gap: 30px; }
+.personal-page .side-task {
+  border-width: 0 0 0 1px;
+  padding: 0 0 0 24px;
+  background: transparent;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.personal-page .side-task > .row h2 { font-family: var(--serif); font-size: 22px; font-weight: 400; }
+.personal-page .side-task h3 { font-family: var(--serif); font-size: 17px; font-weight: 400; }
+.personal-page .side-task .tabs { gap: 3px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.personal-page .side-task .tabs button { padding: 6px 8px; font-size: 12px; }
+.personal-page [data-testid="note-editor"] { padding: 30px; gap: 22px; }
+.personal-page [data-testid="note-editor"] > label:first-child input {
+  padding: 12px 0;
+  border-width: 0 0 1px;
+  font-family: var(--serif);
+  font-size: 23px;
+}
+.personal-page [data-testid="note-editor"] textarea { font-family: var(--serif); font-size: 16px; line-height: 2; padding: 18px; }
+.personal-page .source-block { background: var(--ground); border-color: var(--line); padding: 20px; }
+.personal-page .source-block h3 { font-size: 12px; font-weight: 600; letter-spacing: .04em; }
+.personal-page .source-block blockquote { font-family: var(--serif); font-size: 16px; line-height: 1.9; border-left-width: 1px; }
+.personal-page [data-testid="save-status"] { font-size: 12px; color: var(--muted); }
+
+/* P13: project cards echo a collection shelf, with measured typography. */
+.personal-page .continue-research.panel {
+  border-width: 1px 0;
+  border-color: var(--ink);
+  background: transparent;
+  padding: 26px 0;
+  margin-bottom: 30px;
+}
+.continue-research h2 { font-family: var(--serif); font-size: 26px; font-weight: 400; margin: 11px 0; }
+.continue-research p { font-size: 13px; color: #555; }
+.continue-research small { font-size: 12px; color: var(--muted); }
+.project-card-grid { gap: 28px; }
+.project-card.panel { padding: 26px; gap: 14px; border-color: var(--line); }
+.project-card h2 { font-family: var(--serif); font-size: 24px; font-weight: 400; margin: 8px 0 0; }
+.project-card h2 a { text-decoration: none; }
+.project-card > p { font-size: 13px; line-height: 1.85; color: #555; }
+.project-card > .row:first-child { font-size: 12px; }
+.project-card > .row:last-child { gap: 7px; padding-top: 3px; }
+.project-card > .row:last-child button,
+.project-card > .row:last-child .button { font-size: 12px; padding: 6px 9px; }
+.project-counts { padding: 20px 0; border-color: var(--line); gap: 34px; }
+.project-counts span { font-size: 12px; gap: 4px; color: var(--muted); }
+.project-counts strong { font-family: Georgia, var(--serif); font-size: 34px; line-height: 1.2; font-weight: 400; color: var(--ink); }
+.project-card > small { font-size: 12px; }
+
+/* P15: chapter index, paper, and a single reference column. */
+.plan-page { background: var(--paper); }
+.plan-page > .project-header h1 { font-family: var(--serif); font-weight: 400; font-size: 27px; }
+.plan-page > .tabs { border-bottom: 1px solid var(--line); }
+.plan-toolbar { padding: 16px 0; background: transparent; border-color: var(--line); font-size: 12px; }
+.plan-toolbar > span:nth-child(2) { font-size: 12px; color: var(--muted); }
+.plan-layout { padding: 28px 0; gap: 28px; grid-template-columns: 195px minmax(0, 1fr) 280px; }
+.plan-nav.panel { border: 0; padding: 0; gap: 0; background: transparent; }
+.plan-nav button {
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  padding: 17px 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.plan-nav button.active { background: var(--ground); color: var(--ink); border-color: var(--ink); font-weight: 700; }
+.plan-nav button small,
+.plan-nav button.active small { font-family: Georgia, serif; color: var(--muted); font-size: 12px; }
+.plan-main.panel { padding: 30px; border-color: var(--line); gap: 22px; }
+.plan-main h1 { font-family: var(--serif); font-size: 28px; font-weight: 400; }
+.plan-main h3 { font-family: var(--serif); font-size: 18px; font-weight: 400; padding-top: 8px; border-top: 1px solid var(--line); }
+.plan-main > .muted { font-size: 12px; line-height: 1.85; }
+.plan-main textarea { font-family: var(--serif); font-size: 16px; line-height: 2; padding: 18px; }
+.plan-main .notice { font-size: 12px; background: var(--ground); }
+.plan-main > .toolbar { gap: 8px; }
+.plan-main > .toolbar > * { font-size: 12px; }
+.plan-layout > .side-task { border-width: 0 0 0 1px; padding: 0 0 0 22px; background: transparent; }
+.plan-layout > .side-task > .tabs { padding-bottom: 14px; border-bottom: 1px solid var(--line); gap: 4px; }
+.plan-layout > .side-task > .muted { font-size: 12px; }
+.plan-layout .plan-material { padding: 4px 0 18px; border-color: var(--line); }
+.plan-material h3 { font-family: var(--serif); font-size: 17px; font-weight: 400; line-height: 1.6; margin: 12px 0; }
+.plan-material > button { font-size: 12px; min-height: 30px; }
+.plan-main .reference-row { font-size: 12px; gap: 12px; }
+.plan-main .reference-row button { font-size: 12px; }
+
+/* P16: an understated sequential intake form. */
+.import-steps { border: 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); margin-bottom: 28px; }
+.import-steps span { background: transparent; border-color: var(--line); padding: 20px 12px; font-size: 12px; }
+.personal-page > .import-steps + .toolbar { padding: 0 0 24px; }
+.import-job.panel { padding: 28px; }
+.import-job .page-head { padding-bottom: 20px; border-bottom: 1px solid var(--line); margin-bottom: 24px; }
+.import-job h2 { font-family: var(--serif); font-weight: 400; font-size: 22px; }
+.import-job .source-block > button { margin: 6px 8px 0 0; font-size: 12px; }
+.import-preview { border-color: var(--line); font-family: var(--serif); font-size: 14px; line-height: 1.9; padding: 18px; }
+
+@media (max-width: 1280px) {
+  .personal-shell { grid-template-columns: 172px minmax(0, 1fr); }
+  .personal-nav { padding: 32px 20px; }
+  .personal-page { padding: 30px 28px 52px; }
+  .library-layout { grid-template-columns: 154px minmax(0, 1fr); gap: 24px; }
+  .collection-sidebar.panel { padding-right: 16px; }
+  .personal-with-panel { gap: 24px; grid-template-columns: minmax(0, 1fr) 280px; }
+  .personal-page .side-task { padding-left: 20px; }
+  .plan-layout { grid-template-columns: 174px minmax(0, 1fr) 255px; gap: 22px; }
+  .plan-main.panel { padding: 26px; }
+  .project-card.panel { padding: 23px; }
+}
+@media (max-width: 1000px) {
+  .personal-shell { grid-template-columns: 155px minmax(0, 1fr); }
+  .personal-nav { padding: 28px 16px; }
+  .personal-page { padding: 28px 24px 48px; }
+  .personal-with-panel { grid-template-columns: 1fr; }
+  .personal-page .side-task { border-width: 1px 0 0; padding: 22px 0 0; }
+  .personal-resource-grid,
+  .project-card-grid { grid-template-columns: 1fr; }
+  .plan-layout { grid-template-columns: 172px minmax(0, 1fr); gap: 22px; }
+  .plan-layout > .side-task { grid-column: 2; border-width: 1px 0 0; padding: 22px 0 0; }
+  .plan-main.panel { padding: 24px; }
+  .note-list-row > .row { margin-top: 20px; }
+}
+@media (max-width: 760px) {
+  .personal-shell { display: block; }
+  .personal-nav { border-right: 0; border-bottom: 1px solid var(--line); padding: 0 18px; }
+  .personal-nav > .eyebrow,
+  .personal-nav > h2,
+  .personal-nav > p { display: none; }
+  .personal-nav nav { flex-direction: row; gap: 24px; margin: 0; }
+  .personal-nav nav a,
+  .personal-nav nav a.active { padding: 15px 0; border-bottom-color: transparent; font-size: 12px; }
+  .personal-nav nav a.active { border-bottom-color: var(--ink); }
+  .personal-page { padding: 26px 18px 40px; }
+  .personal-page > .page-head { padding-bottom: 23px; margin-bottom: 24px; align-items: flex-start; }
+  .personal-page > .page-head h1 { font-size: 28px; }
+  .personal-page > .page-head p:last-child { line-height: 1.8; }
+  .personal-page > .page-head > .row { margin-top: 14px; gap: 8px; }
+  .personal-page .personal-with-panel { gap: 24px; }
+  .personal-page [data-testid="note-editor"] { padding: 22px; }
+  .personal-page [data-testid="note-editor"] > label:first-child input { font-size: 21px; }
+  .personal-page [data-testid="note-editor"] textarea { font-size: 15px; padding: 14px; }
+  .personal-page .note-list-row h2 { font-size: 22px; }
+  .project-card h2,
+  .continue-research h2 { font-size: 23px; }
+  .plan-page > .project-header h1 { font-size: 23px; }
+  .plan-toolbar { padding: 16px 0; }
+  .plan-layout { display: block; padding: 23px 0; }
+  .plan-nav.panel { margin-bottom: 24px; }
+  .plan-nav button { padding: 13px 10px; }
+  .plan-main.panel { padding: 22px; }
+  .plan-main h1 { font-size: 25px; }
+  .plan-layout > .side-task { margin-top: 24px; }
+  .import-job.panel { padding: 20px; }
+  .import-steps span { padding: 17px 5px; font-size: 12px; line-height: 1.8; }
+}
+@media (max-width: 700px) {
+  .library-layout { display: block; }
+  .collection-sidebar.panel { border-right: 0; border-bottom: 1px solid var(--line); padding: 0 0 20px; margin-bottom: 24px; }
+  .personal-page .continue-research.panel { padding: 24px 0; }
+  .personal-page .resource-foot { padding-bottom: 14px; }
+  .personal-resource-grid .resource-foot { padding: 12px 18px; }
+  .personal-page .resource-info h3 { font-size: 19px; }
+  .project-card.panel { padding: 22px; }
+}
+
+/* Current Figma arrangement, without changing the existing typography. */
+.personal-shell:has(.library-page) .personal-nav > p { display: none; }
+.library-toolbar { justify-content: space-between; }
+.library-query { flex: 1; max-width: 520px; min-width: 150px; }
+.library-query > .row { gap: 10px; margin-top: 6px; }
+.library-query input { flex: 1; width: 100%; min-width: 0; }
+.library-query button { flex-shrink: 0; }
+.library-results > .library-entry { min-width: 0; }
+.library-page .resource-card.compact { gap: 23px; align-items: flex-start; }
+.library-page .resource-metrics { display: none; }
+.library-page .resource-info { display: flex; flex-direction: column; }
+.library-page .resource-footer { order: -1; }
+.library-page .resource-save-link { margin-left: auto; }
+.personal-resource-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.personal-resource-grid .resource-card { gap: 0; }
+.personal-resource-grid .catalog-visual {
+  width: calc(100% - 36px);
+  min-width: 0;
+  height: 120px;
+  min-height: 120px;
+  margin: 18px 18px 0;
+  padding: 0;
+  background: var(--ground);
+  border: 1px solid var(--line);
+}
+.personal-resource-grid .catalog-visual > * { display: none; }
+.personal-resource-grid .resource-card > .card-select { top: 154px; right: 20px; }
+.personal-resource-grid .resource-footer { padding-right: 24px; }
+.notes-page > .toolbar { justify-content: flex-start; }
+.notes-page > .toolbar > label:nth-last-child(2) { width: 102px; }
+.notes-page > .toolbar > label:last-child { width: 198px; }
+.notes-page > .toolbar select { width: 100%; }
+.note-editor-page .source-block { border-width: 0 0 0 2px; }
+.note-editor-page [data-testid="note-editor"] textarea { min-height: 420px; }
+.projects-page > .toolbar { justify-content: space-between; }
+.continue-research h2 a,
+.plan-material h3 a { color: inherit; text-decoration: none; }
+.continue-research h2 a:hover,
+.plan-material h3 a:hover { text-decoration: underline; }
+.plan-main > .toolbar { justify-content: space-between; }
+.plan-main textarea { min-height: 454px; }
+.imports-page .import-steps { border-bottom-color: var(--ink); }
+
+@media (max-width: 1200px) {
+  .personal-resource-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  .personal-resource-grid { grid-template-columns: minmax(0, 1fr); }
+  .library-query { flex-basis: 100%; max-width: none; }
+  .library-toolbar { gap: 14px; }
+  .notes-page > .toolbar > label:nth-last-child(2),
+  .notes-page > .toolbar > label:last-child { width: auto; flex: 1; }
+  .note-editor-page [data-testid="note-editor"] textarea,
+  .plan-main textarea { min-height: 280px; }
+  .projects-page > .toolbar { justify-content: flex-start; }
+  .plan-main > .toolbar { justify-content: flex-start; }
+}

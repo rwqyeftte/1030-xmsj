@@ -1,0 +1,1665 @@
+{
+  "schemaVersion": 1,
+  "session": {
+    "userId": "demo-user",
+    "isDemo": true
+  },
+  "resources": [
+    {
+      "id": "B01",
+      "versionId": "B01-catalog-v1",
+      "title": "中国工业设计珍藏档案",
+      "mediaType": "book",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "摄影器材"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 72,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "B02",
+      "versionId": "B02-catalog-v1",
+      "title": "工业设计中国之路·日用瓷器",
+      "mediaType": "book",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "陶瓷"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 72,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "B03",
+      "versionId": "B03-catalog-v1",
+      "title": "宣传画与新中国的奋进",
+      "mediaType": "book",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "视觉文化"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 72,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "B04",
+      "versionId": "B04-catalog-v1",
+      "title": "上海自行车商品手册·1975",
+      "mediaType": "book",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "题名含1975；本任务包未核查其出版日期。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "自行车"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 72,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "I01",
+      "versionId": "I01-catalog-v1",
+      "title": "双镜头相机正面",
+      "mediaType": "image",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "摄影器材"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 73,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "I02",
+      "versionId": "I02-catalog-v1",
+      "title": "双镜头相机取景状态",
+      "mediaType": "image",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "摄影器材"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 73,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "I03",
+      "versionId": "I03-catalog-v1",
+      "title": "相机结构图示",
+      "mediaType": "image",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "摄影器材"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 73,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "I04",
+      "versionId": "I04-catalog-v1",
+      "title": "百雀羚广告",
+      "mediaType": "image",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "广告与品牌"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 73,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "I05",
+      "versionId": "I05-catalog-v1",
+      "title": "金龙牌热水瓶广告",
+      "mediaType": "image",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "广告与品牌"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 73,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "I06",
+      "versionId": "I06-catalog-v1",
+      "title": "回力鞋广告",
+      "mediaType": "image",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "广告与品牌"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 73,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "I07",
+      "versionId": "I07-catalog-v1",
+      "title": "飞鹅牌卫生衫广告",
+      "mediaType": "image",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "广告与品牌"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 74,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "I08",
+      "versionId": "I08-catalog-v1",
+      "title": "花布连续纹样",
+      "mediaType": "image",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "花布与纹样"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 74,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "I09",
+      "versionId": "I09-catalog-v1",
+      "title": "印花横贡缎图案",
+      "mediaType": "image",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "花布与纹样"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 74,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "I10",
+      "versionId": "I10-catalog-v1",
+      "title": "金粉印花图案",
+      "mediaType": "image",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "花布与纹样"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 74,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "I11",
+      "versionId": "I11-catalog-v1",
+      "title": "铁皮火车及包装",
+      "mediaType": "image",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "玩具与日用品"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 74,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "I12",
+      "versionId": "I12-catalog-v1",
+      "title": "敲琴玩具",
+      "mediaType": "image",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "玩具与日用品"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 74,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "I13",
+      "versionId": "I13-catalog-v1",
+      "title": "铁皮旋转火车",
+      "mediaType": "image",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "玩具与日用品"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 75,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "I14",
+      "versionId": "I14-catalog-v1",
+      "title": "青花器物局部",
+      "mediaType": "image",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "陶瓷与装饰"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 75,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "I15",
+      "versionId": "I15-catalog-v1",
+      "title": "双耳花瓶",
+      "mediaType": "image",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "陶瓷与装饰"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 75,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "I16",
+      "versionId": "I16-catalog-v1",
+      "title": "保温瓶产品图",
+      "mediaType": "image",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "玩具与日用品"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 75,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "I17",
+      "versionId": "I17-catalog-v1",
+      "title": "保温瓶玫瑰花案",
+      "mediaType": "image",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "花布与纹样"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 75,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "I18",
+      "versionId": "I18-catalog-v1",
+      "title": "石库门生活场景陈列",
+      "mediaType": "image",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "展陈与空间"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 75,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "A01",
+      "versionId": "A01-catalog-v1",
+      "title": "包装设计价值的历史演化逻辑与当代建构",
+      "mediaType": "article",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "包装与使用需求"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 76,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "A02",
+      "versionId": "A02-catalog-v1",
+      "title": "老字号包装的叙事性设计研究",
+      "mediaType": "article",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "老字号与叙事"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 76,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "A03",
+      "versionId": "A03-catalog-v1",
+      "title": "基于VR技术的虚拟博物馆交互设计研究",
+      "mediaType": "article",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "虚拟博物馆与交互"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 76,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "A04",
+      "versionId": "A04-catalog-v1",
+      "title": "知识图谱视角下的设计元研究管窥",
+      "mediaType": "article",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "知识图谱与内容关联"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 76,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "V01",
+      "versionId": "V01-catalog-v1",
+      "title": "工业设计的力量",
+      "mediaType": "video",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "设计影像"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 77,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "V02",
+      "versionId": "V02-catalog-v1",
+      "title": "南京路夜景",
+      "mediaType": "video",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "城市影像"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 77,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "V03",
+      "versionId": "V03-catalog-v1",
+      "title": "设计丰收·乡野嘉年华",
+      "mediaType": "video",
+      "catalogOrigin": "center_preview",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "未详；不得从示例导入日期推断原始年代。",
+      "description": "课程资料预览目录条目；本原型未附原件，不据此推断全文内容。",
+      "subjects": [
+        "活动记录"
+      ],
+      "provenance": {
+        "kind": "course_catalog",
+        "sourceLabel": "2026秋季学期_项目实践课_课程介绍.pdf",
+        "sourcePage": 77,
+        "note": "题名和类别来自课程预览；不附原件，不新增作者/年代/授权结论。"
+      },
+      "availabilityNote": "课程中有预览；本Codex任务包仅提供目录信息。",
+      "rightsStatus": "unverified",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "DEMO-TEXT",
+      "versionId": "DEMO-TEXT-v1",
+      "title": "保温瓶研究准备｜合成阅读测试文本",
+      "mediaType": "article",
+      "catalogOrigin": "synthetic",
+      "isDemo": true,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "demo_readable",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "合成测试材料，无历史年代。",
+      "description": "仅为低保真交互测试制作，不是史料、论文或机构真实服务。",
+      "subjects": [
+        "保温瓶",
+        "研究准备",
+        "演示"
+      ],
+      "provenance": {
+        "kind": "synthetic",
+        "sourceLabel": "本任务包合成测试内容",
+        "note": "与真实馆藏全文隔离；不得作为历史证据。"
+      },
+      "availabilityNote": "可操作的合成演示内容。",
+      "rightsStatus": "synthetic_demo",
+      "contentId": "content-DEMO-TEXT",
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "DEMO-IMAGE",
+      "versionId": "DEMO-IMAGE-v1",
+      "title": "保温瓶版面｜合成选区测试图",
+      "mediaType": "image",
+      "catalogOrigin": "synthetic",
+      "isDemo": true,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "demo_readable",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "合成测试材料，无历史年代。",
+      "description": "仅为低保真交互测试制作，不是史料、论文或机构真实服务。",
+      "subjects": [
+        "保温瓶",
+        "研究准备",
+        "演示"
+      ],
+      "provenance": {
+        "kind": "synthetic",
+        "sourceLabel": "本任务包合成测试内容",
+        "note": "与真实馆藏全文隔离；不得作为历史证据。"
+      },
+      "availabilityNote": "可操作的合成演示内容。",
+      "rightsStatus": "synthetic_demo",
+      "contentId": "content-DEMO-IMAGE",
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "DEMO-VIDEO",
+      "versionId": "DEMO-VIDEO-v1",
+      "title": "资料观察过程｜合成时间轴",
+      "mediaType": "video",
+      "catalogOrigin": "synthetic",
+      "isDemo": true,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "demo_readable",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "合成测试材料，无历史年代。",
+      "description": "仅为低保真交互测试制作，不是史料、论文或机构真实服务。",
+      "subjects": [
+        "保温瓶",
+        "研究准备",
+        "演示"
+      ],
+      "provenance": {
+        "kind": "synthetic",
+        "sourceLabel": "本任务包合成测试内容",
+        "note": "与真实馆藏全文隔离；不得作为历史证据。"
+      },
+      "availabilityNote": "可操作的合成演示内容。",
+      "rightsStatus": "synthetic_demo",
+      "contentId": "content-DEMO-VIDEO",
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "DEMO-RESTRICTED",
+      "versionId": "DEMO-RESTRICTED-v1",
+      "title": "受限资料｜权限演示记录",
+      "mediaType": "book",
+      "catalogOrigin": "synthetic",
+      "isDemo": true,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "restricted",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "合成测试材料，无历史年代。",
+      "description": "仅为低保真交互测试制作，不是史料、论文或机构真实服务。",
+      "subjects": [
+        "保温瓶",
+        "研究准备",
+        "演示"
+      ],
+      "provenance": {
+        "kind": "synthetic",
+        "sourceLabel": "本任务包合成测试内容",
+        "note": "与真实馆藏全文隔离；不得作为历史证据。"
+      },
+      "availabilityNote": "此记录用于权限或隐私状态演示。",
+      "rightsStatus": "synthetic_demo",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "id": "PRIVATE-DEMO",
+      "versionId": "PRIVATE-DEMO-v1",
+      "title": "私人上传｜隐私隔离测试记录",
+      "mediaType": "article",
+      "catalogOrigin": "synthetic",
+      "isDemo": true,
+      "visibility": "private",
+      "ownerId": "demo-user",
+      "access": "metadata_only",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "合成测试材料，无历史年代。",
+      "description": "仅为低保真交互测试制作，不是史料、论文或机构真实服务。",
+      "subjects": [
+        "保温瓶",
+        "研究准备",
+        "演示"
+      ],
+      "provenance": {
+        "kind": "synthetic",
+        "sourceLabel": "本任务包合成测试内容",
+        "note": "与真实馆藏全文隔离；不得作为历史证据。"
+      },
+      "availabilityNote": "此记录用于权限或隐私状态演示。",
+      "rightsStatus": "synthetic_demo",
+      "contentId": null,
+      "createdAt": "2026-10-01T00:00:00Z"
+    }
+  ],
+  "contents": [
+    {
+      "id": "content-DEMO-TEXT",
+      "resourceId": "DEMO-TEXT",
+      "kind": "text",
+      "versionId": "DEMO-TEXT-v1",
+      "warning": "合成文本，仅测试阅读、摘录和原文定位。",
+      "paragraphs": [
+        {
+          "id": "para-1",
+          "text": "这是一段用于低保真交互测试的合成文本，不是历史文献原文。研究者可以选中这句话，创建笔记，并在下一次打开时返回同一段落。"
+        },
+        {
+          "id": "para-2",
+          "text": "演示问题：当用户把资料加入项目后，是否能够在工作版与文件列表中找到同一份资料？这里描述的是产品测试任务，不是研究结论。"
+        },
+        {
+          "id": "para-3",
+          "text": "演示检查：记录一个观察时，应保留材料编号、版本和位置。此段文字由任务包编写，不能被引用为历史事实。"
+        }
+      ]
+    },
+    {
+      "id": "content-DEMO-IMAGE",
+      "resourceId": "DEMO-IMAGE",
+      "kind": "image",
+      "versionId": "DEMO-IMAGE-v1",
+      "width": 800,
+      "height": 1000,
+      "label": "合成版面测试图｜不是史料原图",
+      "warning": "使用中性矩形和标签实现，不仿造原始广告。",
+      "shapes": [
+        {
+          "x": 80,
+          "y": 100,
+          "width": 640,
+          "height": 100,
+          "label": "模拟标题区域"
+        },
+        {
+          "x": 80,
+          "y": 240,
+          "width": 260,
+          "height": 520,
+          "label": "模拟商品区域"
+        },
+        {
+          "x": 390,
+          "y": 240,
+          "width": 330,
+          "height": 520,
+          "label": "模拟文字区域"
+        }
+      ]
+    },
+    {
+      "id": "content-DEMO-VIDEO",
+      "resourceId": "DEMO-VIDEO",
+      "kind": "video_timeline",
+      "versionId": "DEMO-VIDEO-v1",
+      "durationSec": 20,
+      "warning": "模拟时间轴，不是实际视频播放。可选择起止时间以测试锚点。",
+      "segments": [
+        {
+          "startSec": 0,
+          "endSec": 5,
+          "text": "合成片段一：概览"
+        },
+        {
+          "startSec": 5,
+          "endSec": 10,
+          "text": "合成片段二：观察"
+        },
+        {
+          "startSec": 10,
+          "endSec": 20,
+          "text": "合成片段三：记录"
+        }
+      ]
+    }
+  ],
+  "anchors": [
+    {
+      "id": "anchor-text-01",
+      "resourceId": "DEMO-TEXT",
+      "resourceVersionId": "DEMO-TEXT-v1",
+      "kind": "text",
+      "isDemo": true,
+      "paragraphId": "para-1",
+      "quote": "研究者可以选中这句话，创建笔记，并在下一次打开时返回同一段落。"
+    },
+    {
+      "id": "anchor-image-01",
+      "resourceId": "DEMO-IMAGE",
+      "resourceVersionId": "DEMO-IMAGE-v1",
+      "kind": "image",
+      "isDemo": true,
+      "x": 0.1,
+      "y": 0.24,
+      "width": 0.325,
+      "height": 0.52
+    },
+    {
+      "id": "anchor-video-01",
+      "resourceId": "DEMO-VIDEO",
+      "resourceVersionId": "DEMO-VIDEO-v1",
+      "kind": "video",
+      "isDemo": true,
+      "startSec": 3,
+      "endSec": 7
+    }
+  ],
+  "personalSaves": [
+    {
+      "userId": "demo-user",
+      "resourceId": "I05",
+      "savedAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "userId": "demo-user",
+      "resourceId": "I16",
+      "savedAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "userId": "demo-user",
+      "resourceId": "A01",
+      "savedAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "userId": "demo-user",
+      "resourceId": "DEMO-TEXT",
+      "savedAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "userId": "demo-user",
+      "resourceId": "DEMO-IMAGE",
+      "savedAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "userId": "demo-user",
+      "resourceId": "PRIVATE-DEMO",
+      "savedAt": "2026-10-01T00:00:00Z"
+    }
+  ],
+  "collections": [
+    {
+      "id": "collection-demo-01",
+      "ownerId": "demo-user",
+      "title": "广告研究参考（演示收藏夹）",
+      "description": "用于测试收藏夹快照引用。",
+      "members": [
+        {
+          "kind": "resource",
+          "id": "I05"
+        },
+        {
+          "kind": "resource",
+          "id": "I16"
+        },
+        {
+          "kind": "resource",
+          "id": "DEMO-IMAGE"
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "id": "collection-empty",
+      "ownerId": "demo-user",
+      "title": "待整理（空收藏夹）",
+      "description": "空状态演示。",
+      "members": [],
+      "revision": 1
+    }
+  ],
+  "notes": [
+    {
+      "id": "note-demo-01",
+      "ownerId": "demo-user",
+      "originProjectId": "project-demo-01",
+      "title": "阅读位置能否准确恢复（演示笔记）",
+      "type": "excerpt",
+      "currentRevision": 1,
+      "revisions": [
+        {
+          "revision": 1,
+          "body": "这是针对合成文本的摘录练习，不是史料结论。",
+          "anchorIds": [
+            "anchor-text-01"
+          ],
+          "createdAt": "2026-10-01T00:00:00Z",
+          "aiAssisted": false
+        }
+      ],
+      "relatedNoteIds": [
+        "note-demo-02"
+      ]
+    },
+    {
+      "id": "note-demo-02",
+      "ownerId": "demo-user",
+      "originProjectId": "project-demo-01",
+      "title": "版面区域观察（演示笔记）",
+      "type": "observation",
+      "currentRevision": 1,
+      "revisions": [
+        {
+          "revision": 1,
+          "body": "合成示意图中有一个标为“模拟商品区域”的矩形，用来测试选区回溯。",
+          "anchorIds": [
+            "anchor-image-01"
+          ],
+          "createdAt": "2026-10-01T00:00:00Z",
+          "aiAssisted": false
+        }
+      ],
+      "relatedNoteIds": [
+        "note-demo-01"
+      ]
+    },
+    {
+      "id": "note-demo-03",
+      "ownerId": "demo-user",
+      "originProjectId": null,
+      "title": "两个合成材料的比较记录（演示）",
+      "type": "comparison",
+      "currentRevision": 1,
+      "revisions": [
+        {
+          "revision": 1,
+          "body": "文字锚点与图像锚点采用不同定位方式。本条仅演示比较笔记的数据结构。",
+          "anchorIds": [
+            "anchor-text-01",
+            "anchor-image-01"
+          ],
+          "createdAt": "2026-10-01T00:00:00Z",
+          "aiAssisted": false
+        }
+      ],
+      "relatedNoteIds": []
+    }
+  ],
+  "projects": [
+    {
+      "id": "project-demo-01",
+      "ownerId": "demo-user",
+      "title": "日用品广告研究（演示项目）",
+      "status": "active",
+      "question": "拟比较产品图像与文字如何表达信息；当前材料仅用于流程测试。",
+      "updatedAt": "2026-10-01T00:00:00Z",
+      "isDemo": true
+    },
+    {
+      "id": "project-empty",
+      "ownerId": "demo-user",
+      "title": "新课题（空白演示）",
+      "status": "active",
+      "question": "",
+      "updatedAt": "2026-10-01T00:00:00Z",
+      "isDemo": true
+    },
+    {
+      "id": "project-archived",
+      "ownerId": "demo-user",
+      "title": "已归档课题（只读演示）",
+      "status": "archived",
+      "question": "测试归档项目的只读界面。",
+      "updatedAt": "2026-10-01T00:00:00Z",
+      "isDemo": true
+    }
+  ],
+  "projectMembers": [
+    {
+      "id": "member-1",
+      "projectId": "project-demo-01",
+      "ref": {
+        "kind": "resource",
+        "id": "DEMO-TEXT"
+      },
+      "selection": "included",
+      "reading": "reading",
+      "reason": "演示项目引用，不构成选材结论。"
+    },
+    {
+      "id": "member-2",
+      "projectId": "project-demo-01",
+      "ref": {
+        "kind": "resource",
+        "id": "DEMO-IMAGE"
+      },
+      "selection": "included",
+      "reading": "unread",
+      "reason": "演示项目引用，不构成选材结论。"
+    },
+    {
+      "id": "member-3",
+      "projectId": "project-demo-01",
+      "ref": {
+        "kind": "resource",
+        "id": "DEMO-VIDEO"
+      },
+      "selection": "included",
+      "reading": "unread",
+      "reason": "演示项目引用，不构成选材结论。"
+    },
+    {
+      "id": "member-4",
+      "projectId": "project-demo-01",
+      "ref": {
+        "kind": "resource",
+        "id": "I05"
+      },
+      "selection": "candidate",
+      "reading": "unread",
+      "reason": "演示项目引用，不构成选材结论。"
+    },
+    {
+      "id": "member-5",
+      "projectId": "project-demo-01",
+      "ref": {
+        "kind": "resource",
+        "id": "I16"
+      },
+      "selection": "candidate",
+      "reading": "unread",
+      "reason": "演示项目引用，不构成选材结论。"
+    },
+    {
+      "id": "member-6",
+      "projectId": "project-demo-01",
+      "ref": {
+        "kind": "resource",
+        "id": "A01"
+      },
+      "selection": "candidate",
+      "reading": "unread",
+      "reason": "演示项目引用，不构成选材结论。"
+    },
+    {
+      "id": "member-7",
+      "projectId": "project-demo-01",
+      "ref": {
+        "kind": "note",
+        "id": "note-demo-01",
+        "revision": 1
+      },
+      "selection": "candidate",
+      "reading": "unread",
+      "reason": "演示项目引用，不构成选材结论。"
+    },
+    {
+      "id": "member-8",
+      "projectId": "project-demo-01",
+      "ref": {
+        "kind": "note",
+        "id": "note-demo-02",
+        "revision": 1
+      },
+      "selection": "candidate",
+      "reading": "unread",
+      "reason": "演示项目引用，不构成选材结论。"
+    }
+  ],
+  "ideas": [
+    {
+      "id": "idea-demo-01",
+      "projectId": "project-demo-01",
+      "type": "question",
+      "title": "还有哪些来源需要核查？",
+      "body": "演示问题：当前目录信息不能替代原件研读。",
+      "isDemo": true
+    }
+  ],
+  "boardNodes": [
+    {
+      "id": "node-1",
+      "projectId": "project-demo-01",
+      "ref": {
+        "kind": "resource",
+        "id": "DEMO-TEXT"
+      },
+      "x": 60,
+      "y": 60,
+      "width": 260,
+      "height": 160,
+      "groupId": null
+    },
+    {
+      "id": "node-2",
+      "projectId": "project-demo-01",
+      "ref": {
+        "kind": "resource",
+        "id": "DEMO-IMAGE"
+      },
+      "x": 390,
+      "y": 60,
+      "width": 260,
+      "height": 160,
+      "groupId": null
+    },
+    {
+      "id": "node-3",
+      "projectId": "project-demo-01",
+      "ref": {
+        "kind": "note",
+        "id": "note-demo-01",
+        "revision": 1
+      },
+      "x": 60,
+      "y": 300,
+      "width": 260,
+      "height": 160,
+      "groupId": null
+    },
+    {
+      "id": "node-4",
+      "projectId": "project-demo-01",
+      "ref": {
+        "kind": "idea",
+        "id": "idea-demo-01"
+      },
+      "x": 390,
+      "y": 300,
+      "width": 260,
+      "height": 160,
+      "groupId": null
+    }
+  ],
+  "groups": [],
+  "relations": [
+    {
+      "id": "relation-demo-01",
+      "projectId": "project-demo-01",
+      "from": {
+        "kind": "resource",
+        "id": "DEMO-TEXT"
+      },
+      "to": {
+        "kind": "resource",
+        "id": "DEMO-IMAGE"
+      },
+      "type": "compare",
+      "rationale": "用两个合成对象演示跨媒体比较，不代表历史关联。",
+      "anchorIds": [
+        "anchor-text-01",
+        "anchor-image-01"
+      ],
+      "state": "confirmed",
+      "aiAssisted": false,
+      "needsReview": false
+    }
+  ],
+  "edgeBindings": [
+    {
+      "id": "edge-1",
+      "relationId": "relation-demo-01",
+      "sourceNodeId": "node-1",
+      "targetNodeId": "node-2"
+    }
+  ],
+  "boardViews": [
+    {
+      "projectId": "project-demo-01",
+      "x": 0,
+      "y": 0,
+      "zoom": 1,
+      "selectedNodeIds": [],
+      "mode": "overview",
+      "view": "board"
+    },
+    {
+      "projectId": "project-empty",
+      "x": 0,
+      "y": 0,
+      "zoom": 1,
+      "selectedNodeIds": [],
+      "mode": "overview",
+      "view": "board"
+    },
+    {
+      "projectId": "project-archived",
+      "x": 0,
+      "y": 0,
+      "zoom": 1,
+      "selectedNodeIds": [],
+      "mode": "overview",
+      "view": "board"
+    }
+  ],
+  "researchPlans": [
+    {
+      "projectId": "project-demo-01",
+      "revision": 1,
+      "sections": {
+        "topic": {
+          "body": "日用品广告研究（演示项目）",
+          "refs": [],
+          "needsReview": false
+        },
+        "question": {
+          "body": "拟比较产品图像与文字如何表达信息；当前材料仅用于流程测试。",
+          "refs": [],
+          "needsReview": false
+        },
+        "method": {
+          "body": "演示性材料比较；实际方法仍待研究者确定。",
+          "refs": [],
+          "needsReview": false
+        },
+        "feasibility": {
+          "body": "真实目录条目缺少原件，尚不能形成历史结论。",
+          "refs": [],
+          "needsReview": false
+        },
+        "integration": {
+          "body": "",
+          "refs": [
+            {
+              "kind": "resource",
+              "id": "DEMO-IMAGE"
+            },
+            {
+              "kind": "note",
+              "id": "note-demo-01",
+              "revision": 1
+            }
+          ],
+          "needsReview": false
+        }
+      },
+      "updatedAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "projectId": "project-empty",
+      "revision": 1,
+      "sections": {
+        "topic": {
+          "body": "",
+          "refs": [],
+          "needsReview": false
+        },
+        "question": {
+          "body": "",
+          "refs": [],
+          "needsReview": false
+        },
+        "method": {
+          "body": "",
+          "refs": [],
+          "needsReview": false
+        },
+        "feasibility": {
+          "body": "",
+          "refs": [],
+          "needsReview": false
+        },
+        "integration": {
+          "body": "",
+          "refs": [],
+          "needsReview": false
+        }
+      },
+      "updatedAt": "2026-10-01T00:00:00Z"
+    },
+    {
+      "projectId": "project-archived",
+      "revision": 1,
+      "sections": {
+        "topic": {
+          "body": "",
+          "refs": [],
+          "needsReview": false
+        },
+        "question": {
+          "body": "",
+          "refs": [],
+          "needsReview": false
+        },
+        "method": {
+          "body": "",
+          "refs": [],
+          "needsReview": false
+        },
+        "feasibility": {
+          "body": "",
+          "refs": [],
+          "needsReview": false
+        },
+        "integration": {
+          "body": "",
+          "refs": [],
+          "needsReview": false
+        }
+      },
+      "updatedAt": "2026-10-01T00:00:00Z"
+    }
+  ],
+  "topics": [
+    {
+      "id": "topic-demo-01",
+      "title": "日常器物的视觉表达（演示专题）",
+      "question": "如何从资料类型进入一个研究问题？",
+      "intro": "演示策划材料，不是已经完成考证的学术专题；原始目录与合成示例分别标识。",
+      "resourceIds": [
+        "I05",
+        "I16",
+        "I17",
+        "A01",
+        "DEMO-IMAGE"
+      ],
+      "isDemoCuration": true,
+      "status": "published"
+    },
+    {
+      "id": "topic-demo-02",
+      "title": "看懂产品结构（演示专题）",
+      "question": "如何区分实物图和结构图？",
+      "intro": "仅提供目录线索；没有据此编造史料联系。",
+      "resourceIds": [
+        "B01",
+        "I01",
+        "I02",
+        "I03",
+        "B04"
+      ],
+      "isDemoCuration": true,
+      "status": "published"
+    },
+    {
+      "id": "topic-planned",
+      "title": "待策划专题（状态演示）",
+      "question": "",
+      "intro": "尚未开放。",
+      "resourceIds": [],
+      "isDemoCuration": true,
+      "status": "planned"
+    }
+  ],
+  "savedQueries": [
+    {
+      "id": "query-demo-01",
+      "ownerId": "demo-user",
+      "scope": "public",
+      "q": "保温瓶",
+      "mode": "standard",
+      "rules": [],
+      "targetProjectId": "project-demo-01"
+    }
+  ],
+  "importJobs": [],
+  "aiCandidates": [
+    {
+      "id": "ai-demo-01",
+      "scopeLabel": "当前合成测试材料，不包括真实馆藏全文",
+      "allowedResourceIds": [
+        "DEMO-TEXT"
+      ],
+      "body": "模拟AI：测试文本说明可以创建笔记并返回同一段落。可将其保存为一条交互测试笔记；此回答不是学术分析。",
+      "anchorIds": [
+        "anchor-text-01"
+      ],
+      "state": "proposed",
+      "isMock": true
+    }
+  ]
+}

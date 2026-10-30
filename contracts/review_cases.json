@@ -1,0 +1,725 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "id": "P01__guest",
+      "pageId": "P01",
+      "state": "guest",
+      "baseUrl": "/",
+      "screenshotName": "P01__guest.png",
+      "isolated": true
+    },
+    {
+      "id": "P01__default",
+      "pageId": "P01",
+      "state": "default",
+      "baseUrl": "/",
+      "screenshotName": "P01__default.png",
+      "isolated": true
+    },
+    {
+      "id": "P01__empty-projects",
+      "pageId": "P01",
+      "state": "empty-projects",
+      "baseUrl": "/",
+      "screenshotName": "P01__empty-projects.png",
+      "isolated": true
+    },
+    {
+      "id": "P01__recommendation-error",
+      "pageId": "P01",
+      "state": "recommendation-error",
+      "baseUrl": "/",
+      "screenshotName": "P01__recommendation-error.png",
+      "isolated": true
+    },
+    {
+      "id": "P02__default",
+      "pageId": "P02",
+      "state": "default",
+      "baseUrl": "/search?mode=standard",
+      "screenshotName": "P02__default.png",
+      "isolated": true
+    },
+    {
+      "id": "P02__advanced",
+      "pageId": "P02",
+      "state": "advanced",
+      "baseUrl": "/search?mode=standard",
+      "screenshotName": "P02__advanced.png",
+      "isolated": true
+    },
+    {
+      "id": "P02__ai-candidate",
+      "pageId": "P02",
+      "state": "ai-candidate",
+      "baseUrl": "/search?mode=standard",
+      "screenshotName": "P02__ai-candidate.png",
+      "isolated": true
+    },
+    {
+      "id": "P02__invalid",
+      "pageId": "P02",
+      "state": "invalid",
+      "baseUrl": "/search?mode=standard",
+      "screenshotName": "P02__invalid.png",
+      "isolated": true
+    },
+    {
+      "id": "P02__ai-error",
+      "pageId": "P02",
+      "state": "ai-error",
+      "baseUrl": "/search?mode=standard",
+      "screenshotName": "P02__ai-error.png",
+      "isolated": true
+    },
+    {
+      "id": "P03__default",
+      "pageId": "P03",
+      "state": "default",
+      "baseUrl": "/search/results?q=保温瓶&view=list",
+      "screenshotName": "P03__default.png",
+      "isolated": true
+    },
+    {
+      "id": "P03__grid",
+      "pageId": "P03",
+      "state": "grid",
+      "baseUrl": "/search/results?q=保温瓶&view=list",
+      "screenshotName": "P03__grid.png",
+      "isolated": true
+    },
+    {
+      "id": "P03__grouped",
+      "pageId": "P03",
+      "state": "grouped",
+      "baseUrl": "/search/results?q=保温瓶&view=list",
+      "screenshotName": "P03__grouped.png",
+      "isolated": true
+    },
+    {
+      "id": "P03__bulk",
+      "pageId": "P03",
+      "state": "bulk",
+      "baseUrl": "/search/results?q=保温瓶&view=list",
+      "screenshotName": "P03__bulk.png",
+      "isolated": true
+    },
+    {
+      "id": "P03__filtered-empty",
+      "pageId": "P03",
+      "state": "filtered-empty",
+      "baseUrl": "/search/results?q=保温瓶&view=list",
+      "screenshotName": "P03__filtered-empty.png",
+      "isolated": true
+    },
+    {
+      "id": "P03__empty",
+      "pageId": "P03",
+      "state": "empty",
+      "baseUrl": "/search/results?q=保温瓶&view=list",
+      "screenshotName": "P03__empty.png",
+      "isolated": true
+    },
+    {
+      "id": "P03__ai-error",
+      "pageId": "P03",
+      "state": "ai-error",
+      "baseUrl": "/search/results?q=保温瓶&view=list",
+      "screenshotName": "P03__ai-error.png",
+      "isolated": true
+    },
+    {
+      "id": "P04__guest",
+      "pageId": "P04",
+      "state": "guest",
+      "baseUrl": "/recommendations?tab=featured",
+      "screenshotName": "P04__guest.png",
+      "isolated": true
+    },
+    {
+      "id": "P04__default",
+      "pageId": "P04",
+      "state": "default",
+      "baseUrl": "/recommendations?tab=featured",
+      "screenshotName": "P04__default.png",
+      "isolated": true
+    },
+    {
+      "id": "P04__no-interest",
+      "pageId": "P04",
+      "state": "no-interest",
+      "baseUrl": "/recommendations?tab=featured",
+      "screenshotName": "P04__no-interest.png",
+      "isolated": true
+    },
+    {
+      "id": "P04__no-match",
+      "pageId": "P04",
+      "state": "no-match",
+      "baseUrl": "/recommendations?tab=featured",
+      "screenshotName": "P04__no-match.png",
+      "isolated": true
+    },
+    {
+      "id": "P04__stale-resource",
+      "pageId": "P04",
+      "state": "stale-resource",
+      "baseUrl": "/recommendations?tab=featured",
+      "screenshotName": "P04__stale-resource.png",
+      "isolated": true
+    },
+    {
+      "id": "P05__default",
+      "pageId": "P05",
+      "state": "default",
+      "baseUrl": "/topics",
+      "screenshotName": "P05__default.png",
+      "isolated": true
+    },
+    {
+      "id": "P05__filtered-empty",
+      "pageId": "P05",
+      "state": "filtered-empty",
+      "baseUrl": "/topics",
+      "screenshotName": "P05__filtered-empty.png",
+      "isolated": true
+    },
+    {
+      "id": "P05__unpublished",
+      "pageId": "P05",
+      "state": "unpublished",
+      "baseUrl": "/topics",
+      "screenshotName": "P05__unpublished.png",
+      "isolated": true
+    },
+    {
+      "id": "P06__default",
+      "pageId": "P06",
+      "state": "default",
+      "baseUrl": "/topics/topic-demo-01",
+      "screenshotName": "P06__default.png",
+      "isolated": true
+    },
+    {
+      "id": "P06__partial-access",
+      "pageId": "P06",
+      "state": "partial-access",
+      "baseUrl": "/topics/topic-demo-01",
+      "screenshotName": "P06__partial-access.png",
+      "isolated": true
+    },
+    {
+      "id": "P06__ai-no-evidence",
+      "pageId": "P06",
+      "state": "ai-no-evidence",
+      "baseUrl": "/topics/topic-demo-01",
+      "screenshotName": "P06__ai-no-evidence.png",
+      "isolated": true
+    },
+    {
+      "id": "P06__bulk-partial",
+      "pageId": "P06",
+      "state": "bulk-partial",
+      "baseUrl": "/topics/topic-demo-01",
+      "screenshotName": "P06__bulk-partial.png",
+      "isolated": true
+    },
+    {
+      "id": "P07__metadata-only",
+      "pageId": "P07",
+      "state": "metadata-only",
+      "baseUrl": "/resources/I05",
+      "screenshotName": "P07__metadata-only.png",
+      "isolated": true
+    },
+    {
+      "id": "P07__synthetic-text",
+      "pageId": "P07",
+      "state": "synthetic-text",
+      "baseUrl": "/resources/I05",
+      "screenshotName": "P07__synthetic-text.png",
+      "isolated": true
+    },
+    {
+      "id": "P07__synthetic-image",
+      "pageId": "P07",
+      "state": "synthetic-image",
+      "baseUrl": "/resources/I05",
+      "screenshotName": "P07__synthetic-image.png",
+      "isolated": true
+    },
+    {
+      "id": "P07__synthetic-video",
+      "pageId": "P07",
+      "state": "synthetic-video",
+      "baseUrl": "/resources/I05",
+      "screenshotName": "P07__synthetic-video.png",
+      "isolated": true
+    },
+    {
+      "id": "P07__restricted",
+      "pageId": "P07",
+      "state": "restricted",
+      "baseUrl": "/resources/I05",
+      "screenshotName": "P07__restricted.png",
+      "isolated": true
+    },
+    {
+      "id": "P07__source-missing",
+      "pageId": "P07",
+      "state": "source-missing",
+      "baseUrl": "/resources/I05",
+      "screenshotName": "P07__source-missing.png",
+      "isolated": true
+    },
+    {
+      "id": "P08__text",
+      "pageId": "P08",
+      "state": "text",
+      "baseUrl": "/resources/DEMO-TEXT/read?projectId=project-demo-01",
+      "screenshotName": "P08__text.png",
+      "isolated": true
+    },
+    {
+      "id": "P08__image",
+      "pageId": "P08",
+      "state": "image",
+      "baseUrl": "/resources/DEMO-TEXT/read?projectId=project-demo-01",
+      "screenshotName": "P08__image.png",
+      "isolated": true
+    },
+    {
+      "id": "P08__video",
+      "pageId": "P08",
+      "state": "video",
+      "baseUrl": "/resources/DEMO-TEXT/read?projectId=project-demo-01",
+      "screenshotName": "P08__video.png",
+      "isolated": true
+    },
+    {
+      "id": "P08__anchor-invalid",
+      "pageId": "P08",
+      "state": "anchor-invalid",
+      "baseUrl": "/resources/DEMO-TEXT/read?projectId=project-demo-01",
+      "screenshotName": "P08__anchor-invalid.png",
+      "isolated": true
+    },
+    {
+      "id": "P08__save-error",
+      "pageId": "P08",
+      "state": "save-error",
+      "baseUrl": "/resources/DEMO-TEXT/read?projectId=project-demo-01",
+      "screenshotName": "P08__save-error.png",
+      "isolated": true
+    },
+    {
+      "id": "P08__ai-no-evidence",
+      "pageId": "P08",
+      "state": "ai-no-evidence",
+      "baseUrl": "/resources/DEMO-TEXT/read?projectId=project-demo-01",
+      "screenshotName": "P08__ai-no-evidence.png",
+      "isolated": true
+    },
+    {
+      "id": "P08__source-missing",
+      "pageId": "P08",
+      "state": "source-missing",
+      "baseUrl": "/resources/DEMO-TEXT/read?projectId=project-demo-01",
+      "screenshotName": "P08__source-missing.png",
+      "isolated": true
+    },
+    {
+      "id": "P09__default",
+      "pageId": "P09",
+      "state": "default",
+      "baseUrl": "/compare?left=DEMO-TEXT&right=DEMO-IMAGE&projectId=project-demo-01",
+      "screenshotName": "P09__default.png",
+      "isolated": true
+    },
+    {
+      "id": "P09__mixed-media",
+      "pageId": "P09",
+      "state": "mixed-media",
+      "baseUrl": "/compare?left=DEMO-TEXT&right=DEMO-IMAGE&projectId=project-demo-01",
+      "screenshotName": "P09__mixed-media.png",
+      "isolated": true
+    },
+    {
+      "id": "P09__one-unavailable",
+      "pageId": "P09",
+      "state": "one-unavailable",
+      "baseUrl": "/compare?left=DEMO-TEXT&right=DEMO-IMAGE&projectId=project-demo-01",
+      "screenshotName": "P09__one-unavailable.png",
+      "isolated": true
+    },
+    {
+      "id": "P09__dirty-leave",
+      "pageId": "P09",
+      "state": "dirty-leave",
+      "baseUrl": "/compare?left=DEMO-TEXT&right=DEMO-IMAGE&projectId=project-demo-01",
+      "screenshotName": "P09__dirty-leave.png",
+      "isolated": true
+    },
+    {
+      "id": "P10__default",
+      "pageId": "P10",
+      "state": "default",
+      "baseUrl": "/me/library",
+      "screenshotName": "P10__default.png",
+      "isolated": true
+    },
+    {
+      "id": "P10__empty",
+      "pageId": "P10",
+      "state": "empty",
+      "baseUrl": "/me/library",
+      "screenshotName": "P10__empty.png",
+      "isolated": true
+    },
+    {
+      "id": "P10__folder-empty",
+      "pageId": "P10",
+      "state": "folder-empty",
+      "baseUrl": "/me/library",
+      "screenshotName": "P10__folder-empty.png",
+      "isolated": true
+    },
+    {
+      "id": "P10__bulk-partial",
+      "pageId": "P10",
+      "state": "bulk-partial",
+      "baseUrl": "/me/library",
+      "screenshotName": "P10__bulk-partial.png",
+      "isolated": true
+    },
+    {
+      "id": "P10__private",
+      "pageId": "P10",
+      "state": "private",
+      "baseUrl": "/me/library",
+      "screenshotName": "P10__private.png",
+      "isolated": true
+    },
+    {
+      "id": "P11__default",
+      "pageId": "P11",
+      "state": "default",
+      "baseUrl": "/me/notes",
+      "screenshotName": "P11__default.png",
+      "isolated": true
+    },
+    {
+      "id": "P11__empty",
+      "pageId": "P11",
+      "state": "empty",
+      "baseUrl": "/me/notes",
+      "screenshotName": "P11__empty.png",
+      "isolated": true
+    },
+    {
+      "id": "P11__filtered-empty",
+      "pageId": "P11",
+      "state": "filtered-empty",
+      "baseUrl": "/me/notes",
+      "screenshotName": "P11__filtered-empty.png",
+      "isolated": true
+    },
+    {
+      "id": "P11__source-missing",
+      "pageId": "P11",
+      "state": "source-missing",
+      "baseUrl": "/me/notes",
+      "screenshotName": "P11__source-missing.png",
+      "isolated": true
+    },
+    {
+      "id": "P12__default",
+      "pageId": "P12",
+      "state": "default",
+      "baseUrl": "/me/notes/note-demo-01",
+      "screenshotName": "P12__default.png",
+      "isolated": true
+    },
+    {
+      "id": "P12__new",
+      "pageId": "P12",
+      "state": "new",
+      "baseUrl": "/me/notes/note-demo-01",
+      "screenshotName": "P12__new.png",
+      "isolated": true
+    },
+    {
+      "id": "P12__independent",
+      "pageId": "P12",
+      "state": "independent",
+      "baseUrl": "/me/notes/note-demo-01",
+      "screenshotName": "P12__independent.png",
+      "isolated": true
+    },
+    {
+      "id": "P12__dirty",
+      "pageId": "P12",
+      "state": "dirty",
+      "baseUrl": "/me/notes/note-demo-01",
+      "screenshotName": "P12__dirty.png",
+      "isolated": true
+    },
+    {
+      "id": "P12__save-error",
+      "pageId": "P12",
+      "state": "save-error",
+      "baseUrl": "/me/notes/note-demo-01",
+      "screenshotName": "P12__save-error.png",
+      "isolated": true
+    },
+    {
+      "id": "P12__shared-impact",
+      "pageId": "P12",
+      "state": "shared-impact",
+      "baseUrl": "/me/notes/note-demo-01",
+      "screenshotName": "P12__shared-impact.png",
+      "isolated": true
+    },
+    {
+      "id": "P12__source-missing",
+      "pageId": "P12",
+      "state": "source-missing",
+      "baseUrl": "/me/notes/note-demo-01",
+      "screenshotName": "P12__source-missing.png",
+      "isolated": true
+    },
+    {
+      "id": "P13__default",
+      "pageId": "P13",
+      "state": "default",
+      "baseUrl": "/me/projects",
+      "screenshotName": "P13__default.png",
+      "isolated": true
+    },
+    {
+      "id": "P13__empty",
+      "pageId": "P13",
+      "state": "empty",
+      "baseUrl": "/me/projects",
+      "screenshotName": "P13__empty.png",
+      "isolated": true
+    },
+    {
+      "id": "P13__archived",
+      "pageId": "P13",
+      "state": "archived",
+      "baseUrl": "/me/projects",
+      "screenshotName": "P13__archived.png",
+      "isolated": true
+    },
+    {
+      "id": "P13__empty-project",
+      "pageId": "P13",
+      "state": "empty-project",
+      "baseUrl": "/me/projects",
+      "screenshotName": "P13__empty-project.png",
+      "isolated": true
+    },
+    {
+      "id": "P14__empty",
+      "pageId": "P14",
+      "state": "empty",
+      "baseUrl": "/me/projects/project-demo-01/archive?view=board&mode=overview",
+      "screenshotName": "P14__empty.png",
+      "isolated": true
+    },
+    {
+      "id": "P14__members-unplaced",
+      "pageId": "P14",
+      "state": "members-unplaced",
+      "baseUrl": "/me/projects/project-demo-01/archive?view=board&mode=overview",
+      "screenshotName": "P14__members-unplaced.png",
+      "isolated": true
+    },
+    {
+      "id": "P14__overview",
+      "pageId": "P14",
+      "state": "overview",
+      "baseUrl": "/me/projects/project-demo-01/archive?view=board&mode=overview",
+      "screenshotName": "P14__overview.png",
+      "isolated": true
+    },
+    {
+      "id": "P14__preview",
+      "pageId": "P14",
+      "state": "preview",
+      "baseUrl": "/me/projects/project-demo-01/archive?view=board&mode=overview",
+      "screenshotName": "P14__preview.png",
+      "isolated": true
+    },
+    {
+      "id": "P14__deep",
+      "pageId": "P14",
+      "state": "deep",
+      "baseUrl": "/me/projects/project-demo-01/archive?view=board&mode=overview",
+      "screenshotName": "P14__deep.png",
+      "isolated": true
+    },
+    {
+      "id": "P14__relation",
+      "pageId": "P14",
+      "state": "relation",
+      "baseUrl": "/me/projects/project-demo-01/archive?view=board&mode=overview",
+      "screenshotName": "P14__relation.png",
+      "isolated": true
+    },
+    {
+      "id": "P14__files",
+      "pageId": "P14",
+      "state": "files",
+      "baseUrl": "/me/projects/project-demo-01/archive?view=board&mode=overview",
+      "screenshotName": "P14__files.png",
+      "isolated": true
+    },
+    {
+      "id": "P14__analysis",
+      "pageId": "P14",
+      "state": "analysis",
+      "baseUrl": "/me/projects/project-demo-01/archive?view=board&mode=overview",
+      "screenshotName": "P14__analysis.png",
+      "isolated": true
+    },
+    {
+      "id": "P14__save-error",
+      "pageId": "P14",
+      "state": "save-error",
+      "baseUrl": "/me/projects/project-demo-01/archive?view=board&mode=overview",
+      "screenshotName": "P14__save-error.png",
+      "isolated": true
+    },
+    {
+      "id": "P14__read-only",
+      "pageId": "P14",
+      "state": "read-only",
+      "baseUrl": "/me/projects/project-demo-01/archive?view=board&mode=overview",
+      "screenshotName": "P14__read-only.png",
+      "isolated": true
+    },
+    {
+      "id": "P15__empty",
+      "pageId": "P15",
+      "state": "empty",
+      "baseUrl": "/me/projects/project-demo-01/plan?section=question",
+      "screenshotName": "P15__empty.png",
+      "isolated": true
+    },
+    {
+      "id": "P15__default",
+      "pageId": "P15",
+      "state": "default",
+      "baseUrl": "/me/projects/project-demo-01/plan?section=question",
+      "screenshotName": "P15__default.png",
+      "isolated": true
+    },
+    {
+      "id": "P15__ai-candidate",
+      "pageId": "P15",
+      "state": "ai-candidate",
+      "baseUrl": "/me/projects/project-demo-01/plan?section=question",
+      "screenshotName": "P15__ai-candidate.png",
+      "isolated": true
+    },
+    {
+      "id": "P15__insufficient",
+      "pageId": "P15",
+      "state": "insufficient",
+      "baseUrl": "/me/projects/project-demo-01/plan?section=question",
+      "screenshotName": "P15__insufficient.png",
+      "isolated": true
+    },
+    {
+      "id": "P15__save-error",
+      "pageId": "P15",
+      "state": "save-error",
+      "baseUrl": "/me/projects/project-demo-01/plan?section=question",
+      "screenshotName": "P15__save-error.png",
+      "isolated": true
+    },
+    {
+      "id": "P15__read-only",
+      "pageId": "P15",
+      "state": "read-only",
+      "baseUrl": "/me/projects/project-demo-01/plan?section=question",
+      "screenshotName": "P15__read-only.png",
+      "isolated": true
+    },
+    {
+      "id": "P15__export-check",
+      "pageId": "P15",
+      "state": "export-check",
+      "baseUrl": "/me/projects/project-demo-01/plan?section=question",
+      "screenshotName": "P15__export-check.png",
+      "isolated": true
+    },
+    {
+      "id": "P16__empty",
+      "pageId": "P16",
+      "state": "empty",
+      "baseUrl": "/me/import?target=project&projectId=project-demo-01",
+      "screenshotName": "P16__empty.png",
+      "isolated": true
+    },
+    {
+      "id": "P16__selected",
+      "pageId": "P16",
+      "state": "selected",
+      "baseUrl": "/me/import?target=project&projectId=project-demo-01",
+      "screenshotName": "P16__selected.png",
+      "isolated": true
+    },
+    {
+      "id": "P16__review",
+      "pageId": "P16",
+      "state": "review",
+      "baseUrl": "/me/import?target=project&projectId=project-demo-01",
+      "screenshotName": "P16__review.png",
+      "isolated": true
+    },
+    {
+      "id": "P16__duplicate",
+      "pageId": "P16",
+      "state": "duplicate",
+      "baseUrl": "/me/import?target=project&projectId=project-demo-01",
+      "screenshotName": "P16__duplicate.png",
+      "isolated": true
+    },
+    {
+      "id": "P16__partial",
+      "pageId": "P16",
+      "state": "partial",
+      "baseUrl": "/me/import?target=project&projectId=project-demo-01",
+      "screenshotName": "P16__partial.png",
+      "isolated": true
+    },
+    {
+      "id": "P16__unsupported",
+      "pageId": "P16",
+      "state": "unsupported",
+      "baseUrl": "/me/import?target=project&projectId=project-demo-01",
+      "screenshotName": "P16__unsupported.png",
+      "isolated": true
+    },
+    {
+      "id": "P16__target-read-only",
+      "pageId": "P16",
+      "state": "target-read-only",
+      "baseUrl": "/me/import?target=project&projectId=project-demo-01",
+      "screenshotName": "P16__target-read-only.png",
+      "isolated": true
+    },
+    {
+      "id": "P16__storage-error",
+      "pageId": "P16",
+      "state": "storage-error",
+      "baseUrl": "/me/import?target=project&projectId=project-demo-01",
+      "screenshotName": "P16__storage-error.png",
+      "isolated": true
+    }
+  ]
+}

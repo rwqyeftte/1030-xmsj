@@ -1,0 +1,198 @@
+{
+  "repository": "rwqyeftte/1030-xmsj",
+  "createdAt": "2026-10-30T14:44:27.954Z",
+  "status": "AUTHORIZED_PUBLICATION",
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 287,
+      "sha256": "74e2c28e451ef58fbc79530db7a764eab5dfba6d4a92a3a98c7b67a2829ec402"
+    },
+    {
+      "path": "package.json",
+      "bytes": 716,
+      "sha256": "a2bba0fdff9585a3081525600968869b0746bc7f131baaa4b1a04903b096b1e7"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 52864,
+      "sha256": "660f601ac6e832916a3027da509fee83faa5af0c3aa8634319c3b12351c789f4"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 316,
+      "sha256": "024eb877c03c429183ff012d221f460fdf9866b05fa68128afef7b2474ee6384"
+    },
+    {
+      "path": "vite.config.ts",
+      "bytes": 551,
+      "sha256": "2555c5291ab9799d85b09bfbd9f1e77625c91c0b427fc320f6e24f8f8be70b1b"
+    },
+    {
+      "path": ".github/workflows/deploy-pages.yml",
+      "bytes": 1140,
+      "sha256": "d15cec719de60e9d31df1bc4803b89773fd5889786f6c2fd5969932fbf0f846c"
+    },
+    {
+      "path": "contracts/domain.ts",
+      "bytes": 5331,
+      "sha256": "ace7ce7613342dd21c707fa85c27b04c72524bc5fe00e0e7eef97e3c2f11de68"
+    },
+    {
+      "path": "contracts/fixtures.json",
+      "bytes": 53237,
+      "sha256": "c0a977d18ea080ec0d1862de766818bfe80895f8b4aea3638cfeaeeaf82e20d9"
+    },
+    {
+      "path": "contracts/routes.json",
+      "bytes": 7199,
+      "sha256": "da47b8efe45294077eb771596cf01722c63c1967c74d9443a314cf1e72e94335"
+    },
+    {
+      "path": "contracts/review_cases.json",
+      "bytes": 19715,
+      "sha256": "87d616c18f6ce75edf7807ede3c2509fe1d5f084bc4fdf33882c42c504058387"
+    },
+    {
+      "path": "docs/GITHUB_PAGES.md",
+      "bytes": 3186,
+      "sha256": "b8b288e1821cf26d9584ce69b2fdee5315db2979b9cee3ba4f8a94568092ff93"
+    },
+    {
+      "path": "scripts/package-pages.mjs",
+      "bytes": 2354,
+      "sha256": "02b81d3fe86080cc379ca2d444ba3cdf3cf6e6324f841514c5355344b1912da9"
+    },
+    {
+      "path": "tests/pages-browser.mjs",
+      "bytes": 6327,
+      "sha256": "6353205229e052b7652616dc46868bf46d51706139116b911e54b7332c525478"
+    },
+    {
+      "path": "tests/flow.mjs",
+      "bytes": 9450,
+      "sha256": "5e0a22db9d3bdef07fc4383ef3954a7dac819ac8caf98320941cc7f3158b2db2"
+    },
+    {
+      "path": "src/imports.ts",
+      "bytes": 1844,
+      "sha256": "4bbd52ee1f7b8b3d442c6a725a01635daa2169ffb4e5b168dccb3dd88c2ec03f"
+    },
+    {
+      "path": "src/Reader.tsx",
+      "bytes": 19918,
+      "sha256": "cbaa9261bc9d14d3480cb0cb8e3c48fc556f63f5c686692606c411574cfb0f5d"
+    },
+    {
+      "path": "src/store.tsx",
+      "bytes": 18482,
+      "sha256": "5969df184ad0d1aebbd1fb14f34b24246431b8675c936505753cfb839de7d3d8"
+    },
+    {
+      "path": "src/ui.tsx",
+      "bytes": 20919,
+      "sha256": "c31bf4d6f22438a8ce5eeaca36bf867ce88cf32a75b25a98dcb899fcbea5da5d"
+    },
+    {
+      "path": "src/Discovery.tsx",
+      "bytes": 47414,
+      "sha256": "ce6af511c2b445958544d5ebab1f06ae38e87c52920717b57ddadc45b028a448"
+    },
+    {
+      "path": "src/Board.tsx",
+      "bytes": 24617,
+      "sha256": "b091afd209ef68bca1807b53558ba7664513e9b95dd99e106971b9e28ff33f9d"
+    },
+    {
+      "path": "src/Personal.tsx",
+      "bytes": 55111,
+      "sha256": "1eaaf4ff869d34d64083d11aeab24c5c4ca219ac234a6046dca9aa1e0bc22a62"
+    },
+    {
+      "path": "src/main.tsx",
+      "bytes": 5791,
+      "sha256": "c6aeddd3ccc792c58df5984791cdb47fd6a80b1faf7ff72691165a60e9ccb4f0"
+    },
+    {
+      "path": "src/style.css",
+      "bytes": 17899,
+      "sha256": "f243796a35d7f257bc390768c37e4f433bd2ddca46de8257c59f5c669ec2a3b7"
+    },
+    {
+      "path": "src/Personal.css",
+      "bytes": 5714,
+      "sha256": "571b201f8f16609e20080dfab1fb679aeb26af677308de2763ced56c8d4df754"
+    },
+    {
+      "path": "src/Discovery.css",
+      "bytes": 19594,
+      "sha256": "43190ce2ffd416d2624403cb5d0701de892aae55ae8bb4291bc2896d9b0436c9"
+    },
+    {
+      "path": "src/search.ts",
+      "bytes": 2421,
+      "sha256": "2b2b6198dc45504b3dec9b4bdd860da1278799d2c1606811b616457032442671"
+    },
+    {
+      "path": "src/CatalogVisual.tsx",
+      "bytes": 631,
+      "sha256": "21d2148fe10f4be1d1613c1c894ea61e0db29f0f7a85ee391b6a4e4fe1441fe4"
+    },
+    {
+      "path": "src/workspace-visual.css",
+      "bytes": 14533,
+      "sha256": "b3660f9c0ccdc7a39f8921a9f77e5e69a9d5574b20eb2f7debc608ecbefbc79c"
+    },
+    {
+      "path": "src/personal-visual.css",
+      "bytes": 17536,
+      "sha256": "9c749b32cab8fb3ee82bbf686645f780802f369a022b8e23fb61ac8e04d5c6a9"
+    },
+    {
+      "path": "src/visual.css",
+      "bytes": 29498,
+      "sha256": "9d1e3f2bfdc2e8442ec1328160b27c63a1dc9c781c72ac40a47c77ed1a502d78"
+    },
+    {
+      "path": "src/presentation.ts",
+      "bytes": 1536,
+      "sha256": "133973b50539241224d1c30bb3edb7995ae1c3e734b4fda8ca75702857f3040f"
+    },
+    {
+      "path": "src/figma-layout.css",
+      "bytes": 2262,
+      "sha256": "d4f6153593a3f7994372fcdc9b24e02ccc34e10a32494cbd3f39d51fc23b5c28"
+    },
+    {
+      "path": "src/routing.ts",
+      "bytes": 1834,
+      "sha256": "4aab0bf589f96d8d65d6e04f2f52578307e9427c56661cdb33fde805d4783e20"
+    },
+    {
+      "path": "tests/domain.test.ts",
+      "bytes": 3129,
+      "sha256": "9c11ff985a60033ac81274b5e14ec923a2e771138bf97522452c35ddcadbe3e5"
+    },
+    {
+      "path": "tests/search.test.ts",
+      "bytes": 5126,
+      "sha256": "d184c4b48384a1f1f0550c20bfb1ed4fa4a3baf25faa4ec992cf2fbb1d88042a"
+    },
+    {
+      "path": "tests/routing.test.ts",
+      "bytes": 1348,
+      "sha256": "9263a33764a9961c4c4dc2b08fa7118767ecc224b4dc0bade6cd12368683ca9f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1296,
+      "sha256": "d062ec37af0c279b82b542d97ec1d7b35d44560563cb86378d0d8745ac4a1de9"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 79,
+      "sha256": "e9696751320a54fcb5a22abc8ae03c91d16f28ccadd00d5be197edef4da3ae95"
+    }
+  ],
+  "publicationAuthorizedAt": "2026-10-30T14:52:52.120Z"
+}

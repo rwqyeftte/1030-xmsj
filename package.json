@@ -1,0 +1,27 @@
+{
+  "name": "literature-research-center",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "test:browser": "node tests/pages-browser.mjs",
+    "build:pages": "tsc --noEmit && vite build --mode pages",
+    "package:pages": "node scripts/package-pages.mjs"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "typescript": "5.6.3",
+    "vite": "5.4.11",
+    "tsx": "4.19.2",
+    "@playwright/test": "1.51.1"
+  }
+}

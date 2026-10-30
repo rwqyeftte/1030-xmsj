@@ -1,0 +1,335 @@
+{
+  "schemaVersion": 1,
+  "pages": [
+    {
+      "id": "P01",
+      "name": "首页",
+      "path": "/",
+      "shell": "discovery",
+      "requiresSession": false,
+      "queryKeys": [],
+      "example": "/",
+      "reviewStates": [
+        "guest",
+        "default",
+        "empty-projects",
+        "recommendation-error"
+      ]
+    },
+    {
+      "id": "P02",
+      "name": "全站统一搜索／检索编辑",
+      "path": "/search",
+      "shell": "discovery",
+      "requiresSession": false,
+      "queryKeys": [
+        "mode",
+        "q",
+        "targetProjectId"
+      ],
+      "example": "/search?mode=standard",
+      "reviewStates": [
+        "default",
+        "advanced",
+        "ai-candidate",
+        "invalid",
+        "ai-error"
+      ]
+    },
+    {
+      "id": "P03",
+      "name": "检索结果",
+      "path": "/search/results",
+      "shell": "discovery",
+      "requiresSession": false,
+      "queryKeys": [
+        "q",
+        "mode",
+        "types",
+        "subjects",
+        "sort",
+        "view",
+        "topicId",
+        "loaded",
+        "targetProjectId",
+        "queryId"
+      ],
+      "example": "/search/results?q=保温瓶&view=list",
+      "reviewStates": [
+        "default",
+        "grid",
+        "grouped",
+        "bulk",
+        "filtered-empty",
+        "empty",
+        "ai-error"
+      ]
+    },
+    {
+      "id": "P04",
+      "name": "研究资源推荐",
+      "path": "/recommendations",
+      "shell": "discovery",
+      "requiresSession": false,
+      "queryKeys": [
+        "tab"
+      ],
+      "example": "/recommendations?tab=featured",
+      "reviewStates": [
+        "guest",
+        "default",
+        "no-interest",
+        "no-match",
+        "stale-resource"
+      ]
+    },
+    {
+      "id": "P05",
+      "name": "专题目录",
+      "path": "/topics",
+      "shell": "discovery",
+      "requiresSession": false,
+      "queryKeys": [
+        "q",
+        "category",
+        "sort"
+      ],
+      "example": "/topics",
+      "reviewStates": [
+        "default",
+        "filtered-empty",
+        "unpublished"
+      ]
+    },
+    {
+      "id": "P06",
+      "name": "专题资料集",
+      "path": "/topics/:topicId",
+      "shell": "discovery",
+      "requiresSession": false,
+      "queryKeys": [],
+      "example": "/topics/topic-demo-01",
+      "reviewStates": [
+        "default",
+        "partial-access",
+        "ai-no-evidence",
+        "bulk-partial"
+      ]
+    },
+    {
+      "id": "P07",
+      "name": "资料详情",
+      "path": "/resources/:resourceId",
+      "shell": "reader",
+      "requiresSession": false,
+      "queryKeys": [
+        "projectId",
+        "ctx"
+      ],
+      "example": "/resources/I05",
+      "reviewStates": [
+        "metadata-only",
+        "synthetic-text",
+        "synthetic-image",
+        "synthetic-video",
+        "restricted",
+        "source-missing"
+      ]
+    },
+    {
+      "id": "P08",
+      "name": "统一深度阅读器",
+      "path": "/resources/:resourceId/read",
+      "shell": "reader",
+      "requiresSession": false,
+      "queryKeys": [
+        "projectId",
+        "anchorId",
+        "ctx"
+      ],
+      "example": "/resources/DEMO-TEXT/read?projectId=project-demo-01",
+      "reviewStates": [
+        "text",
+        "image",
+        "video",
+        "anchor-invalid",
+        "save-error",
+        "ai-no-evidence",
+        "source-missing"
+      ]
+    },
+    {
+      "id": "P09",
+      "name": "文献对照",
+      "path": "/compare",
+      "shell": "reader",
+      "requiresSession": false,
+      "queryKeys": [
+        "left",
+        "right",
+        "projectId",
+        "ctx"
+      ],
+      "example": "/compare?left=DEMO-TEXT&right=DEMO-IMAGE&projectId=project-demo-01",
+      "reviewStates": [
+        "default",
+        "mixed-media",
+        "one-unavailable",
+        "dirty-leave"
+      ]
+    },
+    {
+      "id": "P10",
+      "name": "全部资料／收藏夹内容",
+      "path": "/me/library",
+      "shell": "personal",
+      "requiresSession": true,
+      "queryKeys": [
+        "q",
+        "source",
+        "collectionId",
+        "sort",
+        "view"
+      ],
+      "example": "/me/library",
+      "reviewStates": [
+        "default",
+        "empty",
+        "folder-empty",
+        "bulk-partial",
+        "private"
+      ]
+    },
+    {
+      "id": "P11",
+      "name": "个人笔记列表",
+      "path": "/me/notes",
+      "shell": "personal",
+      "requiresSession": true,
+      "queryKeys": [
+        "q",
+        "type",
+        "projectId",
+        "sort"
+      ],
+      "example": "/me/notes",
+      "reviewStates": [
+        "default",
+        "empty",
+        "filtered-empty",
+        "source-missing"
+      ]
+    },
+    {
+      "id": "P12",
+      "name": "笔记详情与编辑",
+      "path": "/me/notes/:noteId",
+      "shell": "personal",
+      "requiresSession": true,
+      "queryKeys": [
+        "projectId",
+        "ctx"
+      ],
+      "example": "/me/notes/note-demo-01",
+      "reviewStates": [
+        "default",
+        "new",
+        "independent",
+        "dirty",
+        "save-error",
+        "shared-impact",
+        "source-missing"
+      ],
+      "alternatePaths": [
+        "/me/notes/new"
+      ]
+    },
+    {
+      "id": "P13",
+      "name": "工作台／项目列表",
+      "path": "/me/projects",
+      "shell": "personal",
+      "requiresSession": true,
+      "queryKeys": [
+        "q",
+        "status"
+      ],
+      "example": "/me/projects",
+      "reviewStates": [
+        "default",
+        "empty",
+        "archived",
+        "empty-project"
+      ]
+    },
+    {
+      "id": "P14",
+      "name": "项目研究档案",
+      "path": "/me/projects/:projectId/archive",
+      "shell": "project",
+      "requiresSession": true,
+      "queryKeys": [
+        "view",
+        "mode",
+        "focusNodeId"
+      ],
+      "example": "/me/projects/project-demo-01/archive?view=board&mode=overview",
+      "reviewStates": [
+        "empty",
+        "members-unplaced",
+        "overview",
+        "preview",
+        "deep",
+        "relation",
+        "files",
+        "analysis",
+        "save-error",
+        "read-only"
+      ]
+    },
+    {
+      "id": "P15",
+      "name": "项目研究计划",
+      "path": "/me/projects/:projectId/plan",
+      "shell": "project",
+      "requiresSession": true,
+      "queryKeys": [
+        "section"
+      ],
+      "example": "/me/projects/project-demo-01/plan?section=question",
+      "reviewStates": [
+        "empty",
+        "default",
+        "ai-candidate",
+        "insufficient",
+        "save-error",
+        "read-only",
+        "export-check"
+      ]
+    },
+    {
+      "id": "P16",
+      "name": "导入资料与任务管理",
+      "path": "/me/import",
+      "shell": "personal",
+      "requiresSession": true,
+      "queryKeys": [
+        "target",
+        "projectId"
+      ],
+      "example": "/me/import?target=project&projectId=project-demo-01",
+      "reviewStates": [
+        "empty",
+        "selected",
+        "review",
+        "duplicate",
+        "partial",
+        "unsupported",
+        "target-read-only",
+        "storage-error"
+      ]
+    }
+  ],
+  "reviewOnlyRoute": "/__review",
+  "notProductNavigation": true
+}
