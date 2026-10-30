@@ -30,8 +30,8 @@
     },
     {
       "path": ".github/workflows/deploy-pages.yml",
-      "bytes": 1140,
-      "sha256": "d15cec719de60e9d31df1bc4803b89773fd5889786f6c2fd5969932fbf0f846c"
+      "bytes": 1154,
+      "sha256": "2abc0d0045c653798e2b2624afb7c0aca9ea8e8e3721a79d545c1183a49dfda3"
     },
     {
       "path": "contracts/domain.ts",

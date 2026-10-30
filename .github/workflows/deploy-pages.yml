@@ -1,7 +1,9 @@
 name: Publish research prototype to GitHub Pages
 
-# Publication is an explicit action from the repository's Actions tab.
+# Publish updates to the selected GitHub Pages website.
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
