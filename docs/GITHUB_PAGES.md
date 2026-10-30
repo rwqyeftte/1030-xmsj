@@ -1,5 +1,9 @@
 # GitHub Pages 发布准备
 
+当前公开站点由 Sites 托管：https://wenxian-research-1030.ideal-fern-8907.chatgpt.site
+
+源码已上传本仓库；GitHub Pages 尚未启用。下列步骤供以后切换到 GitHub Pages 使用。
+
 目标仓库：https://github.com/rwqyeftte/1030-xmsj
 
 用户已授权将此发布版本上传至上述仓库并启用 GitHub Pages。实际发布结果请查看仓库 Actions。

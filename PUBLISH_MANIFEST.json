@@ -1,7 +1,7 @@
 {
   "repository": "rwqyeftte/1030-xmsj",
   "createdAt": "2026-10-30T14:44:27.954Z",
-  "status": "AUTHORIZED_PUBLICATION",
+  "status": "SOURCE_UPLOADED_SITE_DEPLOYED",
   "files": [
     {
       "path": "index.html",
@@ -55,8 +55,8 @@
     },
     {
       "path": "docs/GITHUB_PAGES.md",
-      "bytes": 3186,
-      "sha256": "b8b288e1821cf26d9584ce69b2fdee5315db2979b9cee3ba4f8a94568092ff93"
+      "bytes": 3393,
+      "sha256": "b6f2c369bf8a9c5b6a1aa52ff0116a7fb3ab63e2ba6272e6412e4131754ffff2"
     },
     {
       "path": "scripts/package-pages.mjs",
@@ -185,8 +185,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 1296,
-      "sha256": "d062ec37af0c279b82b542d97ec1d7b35d44560563cb86378d0d8745ac4a1de9"
+      "bytes": 1422,
+      "sha256": "9b4c7780c556c072c0eddda7f4643fa97eb238235affe40d986a409c8a8f00c5"
     },
     {
       "path": ".gitignore",
@@ -194,5 +194,10 @@
       "sha256": "e9696751320a54fcb5a22abc8ae03c91d16f28ccadd00d5be197edef4da3ae95"
     }
   ],
-  "publicationAuthorizedAt": "2026-10-30T14:52:52.120Z"
+  "publicationAuthorizedAt": "2026-10-30T14:52:52.120Z",
+  "liveUrl": "https://wenxian-research-1030.ideal-fern-8907.chatgpt.site",
+  "hosting": "Sites",
+  "siteProjectId": "appgprj_6ae4b0a88d1c8191b649acc46c8bdf1b",
+  "siteVersion": 1,
+  "siteSourceCommit": "4e04a4c000c9dd3882387b1bb3fd2a542afa7ac0"
 }

@@ -2,8 +2,8 @@
 
 中文、桌面优先的研究准备交互原型。
 
-网站入口：[文献研究中心](https://rwqyeftte.github.io/1030-xmsj/)（首次发布工作流成功后生效）。
-检索入口：https://rwqyeftte.github.io/1030-xmsj/#/search
+网站入口：[文献研究中心](https://wenxian-research-1030.ideal-fern-8907.chatgpt.site/)。
+检索入口：https://wenxian-research-1030.ideal-fern-8907.chatgpt.site/#/search
 
 ## 本地运行
 
@@ -21,7 +21,7 @@ npm run dev
 
 ## 发布与更新
 
-仓库 Settings → Pages 的 Source 选择 GitHub Actions。更新代码后，在 Actions → Publish research prototype to GitHub Pages → Run workflow 手动发布。普通 push 不会自动发布。
+当前公开版由 Sites 托管；本仓库保留可运行源码。GitHub Pages 尚未启用。如需改用 GitHub Pages，在仓库 Settings → Pages 的 Source 选择 GitHub Actions。更新代码后，在 Actions → Publish research prototype to GitHub Pages → Run workflow 手动发布。普通 push 不会自动发布。
 
 ## 演示范围
 
