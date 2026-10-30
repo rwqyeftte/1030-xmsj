@@ -1,8 +1,8 @@
 # GitHub Pages 发布准备
 
-当前公开站点由 Sites 托管：https://wenxian-research-1030.ideal-fern-8907.chatgpt.site
+当前正式公开站点：https://rwqyeftte.github.io/1030-xmsj/
 
-源码已上传本仓库；GitHub Pages 尚未启用。下列步骤供以后切换到 GitHub Pages 使用。
+源码已上传本仓库，GitHub Pages 已启用。首次云端构建、测试与发布成功；未登录浏览器已验证 16 页直开/刷新和完整研究流程。下列步骤供后续维护使用。
 
 目标仓库：https://github.com/rwqyeftte/1030-xmsj
 
@@ -13,8 +13,8 @@
 1. 运行 `npm run package:pages`，使用输出的 `release/1030-xmsj-时间戳/` 目录作为待上传的仓库内容。不要上传整个原工程目录，也不要将 ZIP 文件本身作为网站。
 2. 经明确授权后，才把该目录内容提交到目标仓库 `main` 分支。目录中的 `.github/workflows/deploy-pages.yml` 也需要上传。
 3. 在仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**。
-4. 在 **Actions → Publish research prototype to GitHub Pages → Run workflow** 手动发布。工作流不会因普通 push 自动发布。
-5. 成功后从该次工作流的部署结果打开网站。预期地址为 `https://rwqyeftte.github.io/1030-xmsj/`；首次发布成功后可访问。
+4. 在 **Actions → Publish research prototype to GitHub Pages → Run workflow** 手动发布。推送到 main 会自动触发发布。
+5. 成功后从该次工作流的部署结果打开网站。预期地址为 `https://rwqyeftte.github.io/1030-xmsj/`；已发布并完成线上检查。
 
 ## 本地使用与检查
 
