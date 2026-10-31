@@ -16,8 +16,29 @@
 .download-metadata dt, .download-metadata dd { margin: 0; padding: 10px 0; border-top: 1px solid var(--line); overflow-wrap: anywhere; }
 .download-metadata dt { color: var(--muted); }
 .download-actions { margin-top: 24px; align-items: stretch; }
-.download-return { display: flex; justify-content: flex-end; margin-top: 24px; }
+.detail-access-actions { margin-top: 20px; }
+.resource-access { overflow-wrap: anywhere; }
+.resource-access h3 { margin: 0 0 12px; }
+.resource-access p, .resource-access li { line-height: 1.8; }
+.resource-access .download-actions { justify-content: flex-start; flex-wrap: wrap; margin-top: 16px; }
+.resource-access-future { border-top: 1px solid var(--line); margin-top: 24px; padding-top: 24px; }
+.resource-access-future ul { padding-left: 22px; margin-bottom: 0; }
+.resource-access-future li + li { margin-top: 8px; }
+.text-reading-content { min-width: 0; }
+.text-selection-toolbar { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 16px; min-height: 60px; padding: 10px 12px; background: #fff; border: 1px solid var(--line); font-size: 13px; }
+.text-selection-toolbar > span { flex: 1; min-width: 120px; }
+.text-selection-toolbar .row { gap: 8px; flex-wrap: wrap; }
+.text-reader [data-text-paragraph] { white-space: pre-wrap; overflow-wrap: anywhere; cursor: text; user-select: text; scroll-margin-top: 80px; }
+.text-reader [data-text-paragraph]:focus-visible { outline: 1px dashed #777; outline-offset: 4px; }
+.text-reader mark { background: #e1e1d8; color: inherit; border-bottom: 1px solid #555; }
+.reader-tools .selected-source-quote { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 220px; overflow: auto; margin: 10px 0; }
 .resource-card .modal { text-align: left; }
+.resource-preview { overflow-wrap: anywhere; }
+.resource-preview-content { padding: 18px 22px; border: 1px solid var(--line); background: #f7f7f5; max-height: 320px; overflow: auto; }
+.resource-preview-content h3 { margin-top: 0; }
+.resource-preview-content p { line-height: 1.8; white-space: pre-wrap; }
+.resource-preview-content svg, .resource-preview-content img { display: block; width: 100%; max-height: 240px; object-fit: contain; }
+.resource-preview > .actions { justify-content: flex-end; flex-wrap: wrap; }
 @media (min-width: 1001px) {
   body:has(main:is([data-page-id="P08"],[data-page-id="P09"],[data-page-id="P12"],[data-page-id="P14"],[data-page-id="P15"])) .global-header nav { flex: 1; justify-content: flex-end; }
 }

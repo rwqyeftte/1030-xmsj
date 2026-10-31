@@ -14,7 +14,7 @@ npm ci
 npm run dev
 ```
 
-- `npm test`：领域、检索和路由测试。
+- `npm test`：领域、检索、路由、阅读笔记与画布汇总测试。
 - `npm run build`：本地路径模式构建。
 - `npm run build:pages`：GitHub Pages 构建，输出到 `dist-pages/`。
 - `npm run test:browser`：构建 Pages 后使用本机 Chrome 运行隔离浏览器检查。
@@ -24,6 +24,8 @@ npm run dev
 当前正式公开版由 GitHub Pages 托管。推送到 main 后，GitHub Actions 会自动安装依赖、运行测试、构建并发布；也可在 Actions → Publish research prototype to GitHub Pages → Run workflow 手动重发。
 
 ## 演示范围
+
+2026-10-31 更新：精简首页、检索、推荐、专题和资料详情界面；完善文本选区笔记、图片区域笔记、视频时间点与片段笔记；优化项目画布操作，并支持从多个关联卡片生成可编辑、可回溯来源的汇总卡。汇总使用本地文本提取与整理，不调用远程模型。
 
 包含 P01—P16 和 `/#/__review` 评审入口。仅研究准备，不含正式论文写作。使用公开目录元数据及明确标记的合成材料，不包含原始 PDF 或个人上传文件。
 

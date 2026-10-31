@@ -5,7 +5,7 @@ import {createHash} from 'node:crypto';
 
 const root=path.resolve(fileURLToPath(new URL('..',import.meta.url)));
 const target=path.join(root,'release','1030-xmsj-'+new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d+Z$/,'Z'));
-const files=['index.html','package.json','package-lock.json','tsconfig.json','vite.config.ts','.github/workflows/deploy-pages.yml','contracts/domain.ts','contracts/fixtures.json','contracts/routes.json','contracts/review_cases.json','docs/GITHUB_PAGES.md','scripts/package-pages.mjs','tests/pages-browser.mjs','tests/flow.mjs'];
+const files=['index.html','package.json','package-lock.json','tsconfig.json','vite.config.ts','.github/workflows/deploy-pages.yml','contracts/domain.ts','contracts/fixtures.json','contracts/routes.json','contracts/review_cases.json','docs/GITHUB_PAGES.md','docs/HOME_REFINEMENT.md','docs/BOARD_REFINEMENT.md','docs/BOARD_SUMMARY.md','scripts/package-pages.mjs','scripts/make-video-example.py','tests/pages-browser.mjs','tests/flow.mjs','tests/reader-selection.mjs','tests/text-selection.mjs'];
 async function enumerate(dir){for(const entry of await fs.readdir(path.join(root,dir),{withFileTypes:true})){const p=dir+'/'+entry.name;if(entry.isSymbolicLink())throw Error('Symlink excluded: '+p);if(entry.isDirectory())await enumerate(p);else files.push(p);}}
 await enumerate('src');
 for(const file of await fs.readdir(path.join(root,'tests')))if(file.endsWith('.test.ts'))files.push('tests/'+file);

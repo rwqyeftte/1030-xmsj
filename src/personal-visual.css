@@ -365,6 +365,17 @@
 .note-editor-page .source-block { border-width: 0 0 0 2px; }
 .note-editor-page [data-testid="note-editor"] textarea { min-height: 420px; }
 .projects-page > .toolbar { justify-content: space-between; }
+.projects-page > .projects-toolbar { align-items: flex-end; gap: 24px; }
+.project-search { flex: 1; max-width: 640px; min-width: 0; }
+.project-search > label { margin-bottom: 8px; }
+.project-search-controls { display: flex; align-items: stretch; gap: 8px; }
+.project-search-controls input { flex: 1; width: 100%; min-width: 0; }
+.project-search-controls button { flex-shrink: 0; }
+.project-search-controls input,.project-search-controls button { min-height: 42px; }
+.project-status-filter { display: inline-flex; align-items: stretch; flex-shrink: 0; border: 1px solid var(--line); }
+.project-status-filter button { min-height: 40px; min-width: 90px; border: 0; padding: 8px 18px; }
+.project-status-filter button + button { border-left: 1px solid var(--line); }
+.project-status-filter button:focus-visible { position: relative; z-index: 1; }
 .continue-research h2 a,
 .plan-material h3 a { color: inherit; text-decoration: none; }
 .continue-research h2 a:hover,
@@ -386,5 +397,7 @@
   .note-editor-page [data-testid="note-editor"] textarea,
   .plan-main textarea { min-height: 280px; }
   .projects-page > .toolbar { justify-content: flex-start; }
+  .projects-page > .projects-toolbar { gap: 16px; }
+  .project-search { flex-basis: 100%; max-width: none; }
   .plan-main > .toolbar { justify-content: flex-start; }
 }

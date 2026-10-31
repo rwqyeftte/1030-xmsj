@@ -1,3 +1,4 @@
+import {videoAnchorLabel} from './video-annotations';
 import {currentLocation} from './routing';
 import React, {createContext, useContext, useEffect, useRef, useState} from 'react';
 import seed from '../contracts/fixtures.json';
@@ -5,6 +6,8 @@ import cases from '../contracts/review_cases.json';
 import type {AppData, ObjectRef, SourceAnchor, MediaType} from '../contracts/domain';
 import {Modal, Link} from './ui';
 import {resourceTitle,projectTitle} from './presentation';
+import {upgradeDemoSearchExample} from './query-presets';
+import {upgradeDemoReadingExample} from './reader-example';
 
 export const STORAGE_KEY = 'literature-center:v1:data';
 export const mediaLabels: Record<MediaType,string> = {book:'图书',article:'文章',image:'图片',video:'视频'};
@@ -37,9 +40,9 @@ export function placeNode(d:AppData,pid:string,ref:ObjectRef) {
   d.boardNodes.push(node);return node;
 }
 export function anchorLabel(a:SourceAnchor) {
-  if(a.kind==='text') return `段落 ${a.paragraphId}`;
+  if(a.kind==='text') return a.endParagraphId&&a.endParagraphId!==a.paragraphId?`选文 ${a.paragraphId} — ${a.endParagraphId}`:`选文 ${a.paragraphId}`;
   if(a.kind==='image') return `图像选区 (${Math.round(a.x*100)}%, ${Math.round(a.y*100)}%) · ${Math.round(a.width*100)}% × ${Math.round(a.height*100)}%`;
-  if(a.kind==='video') return `时间码 ${a.startSec}–${a.endSec} 秒`;
+  if(a.kind==='video') return (a.point?'时间点 ':'时间片段 ')+videoAnchorLabel(a);
   return a.label;
 }
 export function download(name:string,body:string,type='text/plain;charset=utf-8') {
@@ -97,7 +100,12 @@ export function AppProvider({children}:{children:React.ReactNode}) {
   const [target,setTarget]=useState('');const [newName,setNewName]=useState('');const [alsoPlace,setAlsoPlace]=useState(false);const [localError,setLocalError]=useState('');
   const serialized=useRef('');
   function load(id:string):AppData {
-    try {const store=id?sessionStorage:localStorage;const raw=store.getItem(id?`${STORAGE_KEY}:review:${id}`:STORAGE_KEY);if(raw){const parsed=JSON.parse(raw);if(parsed.schemaVersion===1&&Array.isArray(parsed.resources))return parsed;}}
+    try {const store=id?sessionStorage:localStorage;const raw=store.getItem(id?`${STORAGE_KEY}:review:${id}`:STORAGE_KEY);if(raw){const parsed=JSON.parse(raw);if(parsed.schemaVersion===1&&Array.isArray(parsed.resources)){
+      if(id)return parsed;
+      const next=upgradeDemoReadingExample(upgradeDemoSearchExample(parsed));
+      if(next!==parsed){try{store.setItem(STORAGE_KEY,JSON.stringify(next));}catch{return parsed;}}
+      return next;
+    }}}
     catch{/* A readable seed remains available when browser storage is disabled. A write reports the error. */}
     return id?makeReviewData(id):structuredClone(seed) as AppData;
   }
@@ -111,7 +119,7 @@ export function AppProvider({children}:{children:React.ReactNode}) {
       if(['save-error','storage-error'].includes(review))throw new Error('模拟存储失败：本次提交未保存。草稿仍保留，可重试或导出草稿。');
       const raw=JSON.stringify(draft);(reviewId?sessionStorage:localStorage).setItem(reviewId?`${STORAGE_KEY}:review:${reviewId}`:STORAGE_KEY,raw);
       current.current=draft;serialized.current=raw;setData(draft);setStatus('saved');setError('');setNotice(message);return true;
-    } catch(e) {setError(e instanceof Error?e.message:'保存失败，草稿未丢弃。');setStatus('error');return false;}
+    } catch(e) {setNotice('');setError(e instanceof Error?e.message:'保存失败，草稿未丢弃。');setStatus('error');return false;}
   };
   const requireLogin=(action:()=>void)=>{if(current.current.session.userId)action();else{pending.current=action;setLogin(true);}};
   const openPicker=(type:'project'|'collection',refs:ObjectRef[])=>requireLogin(()=>{setPicker({type,refs});const qs=new URLSearchParams(currentLocation().search);setTarget(type==='project'?(qs.get('targetProjectId')||qs.get('projectId')||current.current.projects.find(p=>p.status==='active')?.id||''):(current.current.collections[0]?.id||''));setNewName('');setAlsoPlace(false);setLocalError('');});

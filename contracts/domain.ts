@@ -30,9 +30,9 @@ export type DemoContent = {
 export type SourceAnchor = {
  id:ID; resourceId:ID; resourceVersionId:ID; isDemo:boolean;
 } & (
- {kind:'text'; paragraphId:ID; quote:string; prefix?:string;suffix?:string} |
+ {kind:'text'; paragraphId:ID; endParagraphId?:ID; startOffset?:number; endOffset?:number; quote:string; prefix?:string;suffix?:string} |
  {kind:'image'; pageIndex?:number; x:number;y:number;width:number;height:number} |
- {kind:'video';startSec:number;endSec:number} |
+ {kind:'video';startSec:number;endSec:number;point?:boolean} |
  {kind:'record';label:string}
 );
 export interface PersonalSave {userId:ID;resourceId:ID;savedAt:string}
@@ -41,10 +41,11 @@ export interface NoteRevision {revision:number;body:string;anchorIds:ID[];create
 export interface Note {id:ID;ownerId:ID;originProjectId:ID|null;title:string;type:'excerpt'|'observation'|'interpretation'|'comparison'|'independent'; currentRevision:number;revisions:NoteRevision[];relatedNoteIds:ID[]}
 export interface Project {id:ID;ownerId:ID;title:string;status:'active'|'archived';question:string;updatedAt:string;isDemo:boolean}
 export interface ProjectMember {id:ID;projectId:ID;ref:ObjectRef;selection:'candidate'|'included'|'excluded';reading:'unread'|'reading'|'read';reason:string}
-export interface Idea {id:ID;projectId:ID;type:'question'|'tentative_claim'|'memo';title:string;body:string;isDemo:boolean}
+export interface SummarySource {ref:ObjectRef;title:string;resourceVersionId?:ID;basis:'text'|'note'|'idea'|'description'|'metadata';excerpt:string;anchorIds:ID[]}
+export interface Idea {id:ID;projectId:ID;type:'question'|'tentative_claim'|'memo'|'summary';title:string;body:string;isDemo:boolean;summary?:{method:'local_extract';focus:string;sources:SummarySource[];createdAt:string}}
 export interface BoardNode {id:ID;projectId:ID;ref:ObjectRef;x:number;y:number;width:number;height:number;groupId:ID|null}
 export interface ProjectGroup {id:ID;projectId:ID;title:string;memberRefs:ObjectRef[];sourceCollectionId:ID|null;sourceCollectionRevision:number|null}
-export interface Relation {id:ID;projectId:ID;from:ObjectRef;to:ObjectRef;type:'same_source'|'compare'|'supports'|'contradicts'|'background'|'hypothesis';rationale:string;anchorIds:ID[];state:'proposed'|'confirmed'|'inactive';aiAssisted:boolean;needsReview:boolean}
+export interface Relation {id:ID;projectId:ID;from:ObjectRef;to:ObjectRef;type:'same_source'|'compare'|'supports'|'contradicts'|'background'|'hypothesis'|'summary_source';rationale:string;anchorIds:ID[];state:'proposed'|'confirmed'|'inactive';aiAssisted:boolean;needsReview:boolean}
 export interface EdgeBinding {id:ID;relationId:ID;sourceNodeId:ID;targetNodeId:ID}
 export interface BoardView {projectId:ID;x:number;y:number;zoom:number;selectedNodeIds:ID[];mode:'overview'|'preview'|'deep';view:'board'|'files'|'analysis'}
 export interface PlanSection {body:string;refs:ObjectRef[];needsReview:boolean}
@@ -56,6 +57,7 @@ export interface AICandidate {id:ID;scopeLabel:string;allowedResourceIds:ID[];bo
 export interface ReturnContext {id:ID;pathname:string;search:string;scrollY:number;targetProjectId?:ID;focusNodeId?:ID;readerAnchorId?:ID;boardViewport?:{x:number;y:number;zoom:number};focusReturnKey?:string}
 export type SaveState = 'idle'|'dirty'|'saving'|'saved'|'error';
 export interface AppData {
+ demoSearchExampleVersion?:number;
  schemaVersion:1;session:{userId:ID|null;isDemo:true};
  resources:Resource[];contents:DemoContent[];anchors:SourceAnchor[];
  personalSaves:PersonalSave[];collections:Collection[];notes:Note[];

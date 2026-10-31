@@ -1,13 +1,23 @@
 import type { AppData, Resource } from '../contracts/domain';
 import { resourceTitle } from './presentation';
 
+// Local prototype: recognize only existing public subject labels, without a model request.
+// Keep the original description in the URL/history and fall back to literal search.
+function descriptionTerms(data:AppData, description:string):string[]{
+  const subjects=[...new Set(data.resources.filter(r=>r.visibility==='public').flatMap(r=>r.subjects).map(s=>s.toLocaleLowerCase().trim()))];
+  const matched=subjects.filter(s=>s.length>1&&description.includes(s));
+  return matched.filter(s=>!matched.some(other=>other!==s&&other.includes(s)));
+}
+
 export function publicResults(data:AppData, params:URLSearchParams):Resource[]{
   const q=(params.get('q')||'').toLocaleLowerCase().trim(), types=(params.get('types')||'').split(',').filter(Boolean),subjects=(params.get('subjects')||'').split(',').filter(Boolean);
   const query=data.savedQueries.find(x=>x.id===params.get('queryId'));if(params.get('queryId')&&!query)return [];
+  const inferred=(params.get('mode')||query?.mode)==='ai'?descriptionTerms(data,q):[];
+  const terms=inferred.length?inferred:q.split(/\s+/);
   const getField=(r:Resource,field:string)=>field==='title'?`${r.title} ${resourceTitle(r)}`:field==='subject'?r.subjects.join(' '):field==='source'?r.provenance.sourceLabel:field==='author'?r.authors?.join(' ')||'':field==='date'?r.sourceDate||'':data.contents.filter(c=>c.resourceId===r.id&&c.kind==='text').flatMap(c=>c.kind==='text'?c.paragraphs.map(p=>p.text):[]).join(' ');
   let result=data.resources.filter(r=>{if(r.visibility!=='public')return false;
     const hay=[getField(r,'title'),r.description,r.id,r.subjects.join(' '),r.authors?.join(' ')||'',r.provenance.sourceLabel,getField(r,'fulltext')].join(' ').toLocaleLowerCase();
-    let hit:boolean|null=q?q.split(/\s+/).every(part=>hay.includes(part)):query?.rules.length?null:true;
+    let hit:boolean|null=q?terms.every(part=>hay.includes(part)):query?.rules.length?null:true;
     for(const rule of query?.rules||[]){const match=getField(r,rule.field).toLocaleLowerCase().includes(rule.value.toLocaleLowerCase());hit=hit===null?(rule.operator==='NOT'?!match:match):rule.operator==='OR'?hit||match:rule.operator==='NOT'?hit&&!match:hit&&match;}
     if(!hit||types.length&&!types.includes(r.mediaType)||subjects.length&&!subjects.some(s=>r.subjects.includes(s)))return false;
     if(params.get('access')&&params.get('access')!==r.access)return false;

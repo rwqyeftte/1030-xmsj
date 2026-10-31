@@ -8,6 +8,32 @@ const params=(q:Record<string,string>={})=>new URLSearchParams(q);
 const ids=(resources:ReturnType<typeof publicResults>)=>resources.map(r=>r.id);
 const addQuery=(data:AppData,rules:QueryRecord['rules'])=>{data.savedQueries.push({id:'test-query',ownerId:'demo-user',scope:'public',q:'',mode:'standard',rules,targetProjectId:null});return params({queryId:'test-query'});};
 
+test('AI模式直接匹配自然语言中的公开主题，保留原描述且不改变常规检索',()=>{
+ const d=seed(),q='我想找有关保温瓶的研究资料',p=params({q,mode:'ai'});
+ const before=JSON.stringify(d);
+ assert.deepEqual(ids(publicResults(d,p)),ids(publicResults(d,params({q:'保温瓶'}))));
+ assert.ok(publicResults(d,p).length>0);
+ assert.equal(publicResults(d,params({q,mode:'standard'})).length,0);
+ assert.equal(p.get('q'),q);assert.equal(JSON.stringify(d),before);
+});
+
+test('自动主题匹配仍遵守高级条件与筛选，保存的AI策略可直接重用',()=>{
+ const d=seed(),p=addQuery(d,[{field:'title',operator:'NOT',value:'合成'}]);
+ d.savedQueries.find(q=>q.id==='test-query')!.mode='ai';
+ p.set('q','请帮我找保温瓶的资料');p.set('types','image');
+ const expected=params({q:'保温瓶',queryId:'test-query',types:'image',mode:'standard'});
+ assert.deepEqual(ids(publicResults(d,p)),ids(publicResults(d,expected)));
+ assert.ok(publicResults(d,p).length>0);
+});
+
+test('描述无已知主题时按原词查询，不返回全库或泄露私人资料',()=>{
+ const d=seed();
+ assert.equal(publicResults(d,params({q:'帮我找量子纠缠论文',mode:'ai'})).length,0);
+ assert.deepEqual(ids(publicResults(d,params({q:'同一段落',mode:'ai'}))),['DEMO-TEXT']);
+ d.resources.find(r=>r.id==='PRIVATE-DEMO')!.subjects=['仅私有主题'];
+ assert.equal(publicResults(d,params({q:'寻找仅私有主题',mode:'ai'})).length,0);
+});
+
 test('公开关键词检索命中题名和主题，所有会话均排除私有资料',()=>{
  const d=seed();const found=ids(publicResults(d,params({q:'保温瓶'})));
  assert.ok(found.includes('I16'));assert.ok(found.includes('DEMO-TEXT'));assert.equal(found.includes('PRIVATE-DEMO'),false);

@@ -10,8 +10,8 @@
 
 ## 发布方式
 
-1. 运行 `npm run package:pages`，使用输出的 `release/1030-xmsj-时间戳/` 目录作为待上传的仓库内容。不要上传整个原工程目录，也不要将 ZIP 文件本身作为网站。
-2. 经明确授权后，才把该目录内容提交到目标仓库 `main` 分支。目录中的 `.github/workflows/deploy-pages.yml` 也需要上传。
+1. 维护此仓库时直接检查、提交当前源码；需要单独交付源码包时运行 `npm run package:pages`，使用输出的 `release/1030-xmsj-时间戳/` 目录。不要上传整个原工程目录，也不要将 ZIP 文件本身作为网站。
+2. 经明确授权后，将修改提交到目标仓库 `main` 分支。保留 `.github/workflows/deploy-pages.yml`，排除截图、测试导出结果和本机缓存。
 3. 在仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**。
 4. 在 **Actions → Publish research prototype to GitHub Pages → Run workflow** 手动发布。推送到 main 会自动触发发布。
 5. 成功后从该次工作流的部署结果打开网站。预期地址为 `https://rwqyeftte.github.io/1030-xmsj/`；已发布并完成线上检查。
@@ -41,6 +41,6 @@ Pages 使用 `/1030-xmsj/#/search` 等地址。静态服务器只请求目录首
 
 这是静态研究准备原型。登录、AI/OCR和权限为演示能力，没有账号服务器或云数据库。每位访客的保存、项目、笔记和上传文件存于自己的浏览器，不会与其他访客共享。本机 localhost 数据不会自动迁移到线上域名。站点演示登录不是网站访问控制。
 
-本地已通过类型检查、23 项单元测试、16 页面与 90 评审状态浏览器检查，以及完整研究操作流程。线上发布状态以仓库 Actions 为准。
+首次发布通过类型检查、23 项单元测试、16 页面与 90 评审状态浏览器检查，以及完整研究操作流程。2026-10-31 更新通过 53 项单元测试和 Pages 构建，并对新增阅读笔记与画布汇总交互进行了浏览器验证。每次线上发布状态以仓库 Actions 为准。
 
 官方参考：https://vite.dev/guide/static-deploy.html#github-pages
