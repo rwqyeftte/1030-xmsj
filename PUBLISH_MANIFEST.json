@@ -1,13 +1,13 @@
 {
   "repository": "rwqyeftte/1030-xmsj",
-  "createdAt": "2026-11-12T17:28:30.115Z",
+  "createdAt": "2026-11-12T18:09:49.883Z",
   "status": "SOURCE_SNAPSHOT_FOR_GITHUB_PAGES",
   "note": "Hashes cover committed source bytes. Current deployment status is reported by GitHub Actions.",
   "liveUrl": "https://rwqyeftte.github.io/1030-xmsj/",
   "hosting": "GitHub Pages",
   "previousVerifiedDeployment": {
-    "sourceCommit": "c91c9386639c06ad5638cebd6df0486fe76d89f3",
-    "workflowRun": "https://github.com/rwqyeftte/1030-xmsj/actions/runs/41079391115"
+    "sourceCommit": "f76a586c8242b52b54d8c0a3c8a1b9e1c08a0ad6",
+    "workflowRun": "https://github.com/rwqyeftte/1030-xmsj/actions/runs/43273733303"
   },
   "files": [
     {
@@ -27,8 +27,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3304,
-      "sha256": "d8915c534b4fd104bfb584959d3652c53897c6d02c8bf6c6eeb5bd2160ebdf0c"
+      "bytes": 3306,
+      "sha256": "b2a749c8954748b84466401baed653f95be2d67c2088671dc2795ca9cf4a7016"
     },
     {
       "path": "contracts/course-articles.json",
@@ -112,8 +112,8 @@
     },
     {
       "path": "docs/GITHUB_PAGES.md",
-      "bytes": 4430,
-      "sha256": "b0189fa5377031b871347f41cdcfa56adb940fa8bc49e59e8de5631ce11581d4"
+      "bytes": 4566,
+      "sha256": "599066162ece6c6eb0b55b613456a54083018459ab84b18d1c52a3b1ce4117b7"
     },
     {
       "path": "docs/HOME_REFINEMENT.md",
@@ -152,8 +152,8 @@
     },
     {
       "path": "scripts/reader-api.mjs",
-      "bytes": 17436,
-      "sha256": "649a48c3a807ab29716622b239ba5649f1d2f294de306f7b21fc486f742af78e"
+      "bytes": 17202,
+      "sha256": "6a725f9c13a77c57d7f6cf2eb5ff8da786f3cb6d469a4a0996b29bfb0ad9715a"
     },
     {
       "path": "scripts/serve-reader.mjs",
@@ -904,6 +904,11 @@
       "path": "tests/reader-example.test.ts",
       "bytes": 2276,
       "sha256": "7c131aade35bd45bb8ee173738137a1e3d2ddfbe21f242ef316eb1cb152efbc5"
+    },
+    {
+      "path": "tests/reader-limits.test.ts",
+      "bytes": 1817,
+      "sha256": "aa1d92729ae3b5d1adecff5eba5be2e017a064395b35bc075ade7fe119b2e16c"
     },
     {
       "path": "tests/reader-selection.mjs",

@@ -1,6 +1,6 @@
 # 文献研究中心 · GitHub Pages 发布说明
 
-Pages 托管检索、精读、笔记和研究画布的静态前端。模型请求由单独部署的 Node.js 服务处理。[打开网站](https://rwqyeftte.github.io/1030-xmsj/) · [源码仓库](https://github.com/rwqyeftte/1030-xmsj)
+Pages 托管检索、精读、笔记和研究画布的静态前端。公开站的模型请求由 Sites 接口处理，也可用本仓库的 Node.js 服务自托管。[打开网站](https://rwqyeftte.github.io/1030-xmsj/) · [源码仓库](https://github.com/rwqyeftte/1030-xmsj)
 
 ## 本地运行与发布前检查
 
@@ -20,12 +20,12 @@ Pages 托管检索、精读、笔记和研究画布的静态前端。模型请�
 
 单独交付源码包时运行 `npm run package:pages`。输出目录 `release/1030-xmsj-时间戳/` 内的 `PUBLISH_MANIFEST.json` 记录本次打包文件的大小和 SHA-256。脚本排除开发缓存、浏览器数据、测试截图和本机环境变量文件。
 
-## 配置独立 AI 服务
+## 自托管 Node.js AI 服务
 
 如需公开版使用 DeepSeek 辅助检索、专题与阅读问答或 PDF 选段解读，需要同时配置后端和前端构建。
 
 1. 在支持 Node.js 22 和 HTTPS 的后端部署这份源码，安装依赖，在后端的 Secret 中设置 `DEEPSEEK_API_KEY`，并设置 `READER_SITE_ORIGIN=https://rwqyeftte.github.io`。
-2. 使用 `npm run start:reader-api` 启动服务，监听托管平台提供的 `PORT`。单进程最多同时处理 2 个请求，每小时最多受理 30 个请求，访客共用该进程的额度。
+2. 使用 `npm run start:reader-api` 启动服务，监听托管平台提供的 `PORT`。公开 Node 服务每个进程最多同时处理 10 个 AI 请求，所有访客共用。并发已满时返回 HTTP 429，已有请求结束后即可重试。服务不设每小时请求次数上限。
 3. 在 GitHub 仓库的 Actions 变量中，将 `VITE_READER_API_URL` 设为后端完整的 HTTPS 地址，以 `/api/reader` 结尾。重新运行 Pages 工作流，使公开接口地址进入前端构建。密钥保存在后端。
 4. 打开已部署的站点，提交一次辅助检索或阅读问题来验证模型响应。静态发布成功仅能确认前端已部署。前端缺少接口地址时，会提示服务尚未配置。
 

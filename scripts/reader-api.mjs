@@ -228,9 +228,8 @@ async function structuredAnswer({format,instructions,input}) {
 }
 
 export function createReaderHandler(siteOrigin) {
+  const maxConcurrent = siteOrigin ? 10 : 2;
   let active = 0;
-  let windowStart = Date.now();
-  let requests = 0;
   return async(req,res) => {
     res.setHeader('Content-Type','application/json; charset=utf-8');
     res.setHeader('Cache-Control','no-store');
@@ -248,7 +247,7 @@ export function createReaderHandler(siteOrigin) {
         }
       } else if (!/^(localhost|127\.0\.0\.1)(:\d+)?$/.test(host) || req.headers.origin !== 'http://'+host) throw new ApiError(403,'请从本机阅读页访问。');
       if (req.method!=='POST' || req.headers['content-type']?.split(';')[0]!=='application/json') throw new ApiError(405,'请发送 JSON 请求。');
-      if (active>=2) throw new ApiError(429,'已有请求进行中，请稍后重试。');
+      if (active>=maxConcurrent) throw new ApiError(429,'已有请求进行中，请稍后重试。');
       active++; acquired=true;
       const chunks=[]; let bytes=0;
       for await (const chunk of req) {
@@ -259,11 +258,6 @@ export function createReaderHandler(siteOrigin) {
       let payload;
       try { payload=JSON.parse(Buffer.concat(chunks).toString('utf8')); } catch { throw new ApiError(400,'请求格式无效。'); }
       if(bytes>16384 && payload?.task!=='chat') throw new ApiError(413,'请求过大。');
-      if (siteOrigin) {
-        if (Date.now()-windowStart>=3600000) { windowStart=Date.now(); requests=0; }
-        if (requests>=30) throw new ApiError(429,'当前服务的每小时请求额度已用完。');
-        requests++;
-      }
       let result;
       if (payload?.task === 'search') result = await interpretSearch(payload.question);
       else if (payload?.task === 'read_pdf') result = await interpretPdf(payload);
