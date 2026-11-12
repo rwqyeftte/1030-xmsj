@@ -64,3 +64,82 @@
   .research-board .board-toolbar {flex-wrap:wrap;}
   .research-board .board-toolbar .row {flex-wrap:wrap;}
 }
+
+.research-board .board-canvas {
+  background-color:#f6f6f6;
+  background-image:radial-gradient(circle,#d7d7d7 .7px,transparent .85px);
+  background-size:18px 18px;
+}
+.research-board .board-group {background:#eaeaeaf2;border:1px solid #c7c7c7;border-radius:9px;}
+.research-board .board-group-name {display:flex;align-items:baseline;gap:10px;left:17px;right:17px;top:6px;color:#333;font-size:14px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+.board-group-name small {color:#686868;font-size:11px;font-weight:400;}
+.research-board .board-node {
+  background:white;border:1px solid #c1c1c1;border-radius:6px;
+  box-shadow:0 2px 4px #0000000c;cursor:pointer;overflow:hidden;
+}
+.research-board .board-node:hover {border-color:#777;}
+.research-board .board-node:focus-visible {outline:2px solid #242424;outline-offset:3px;}
+.research-board .board-node.selected {border-color:#333;outline:2px solid #333;outline-offset:1px;box-shadow:0 3px 8px #0001;}
+.research-board .board-node > header {background:transparent;color:#525252;border:0;padding:9px 13px 0;letter-spacing:.03em;}
+.board-card-type {display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;}
+.board-card-type::before {content:'';width:8px;height:10px;border:1px solid currentColor;border-radius:1px;display:inline-block;box-shadow:-2px 2px 0 -1px white,-2px 2px 0 currentColor;}
+.board-node.note .board-card-type::before {width:9px;height:9px;box-shadow:none;border-bottom-width:3px;}
+.board-node.idea .board-card-type::before {width:8px;height:8px;transform:rotate(45deg);box-shadow:none;}
+.research-board .board-node .node-actions {border:0;background:transparent;color:#737373;border-radius:3px;min-width:26px;}
+.research-board .board-node .node-actions:hover,.research-board .board-node .node-actions:focus-visible {background:#ededed;color:#111;}
+.research-board .board-node h3 {color:#222;font-size:17px;line-height:1.4;letter-spacing:0;margin:7px 14px 6px;overflow-wrap:anywhere;}
+.research-board .board-node p {font-size:12px;line-height:1.6;color:#5d5d5d;margin:0 14px 10px;overflow-wrap:anywhere;}
+.research-board .board-node footer {padding:6px 13px 7px;border-top:1px solid #ededed;color:#686868;font-size:11px;}
+.research-board .board-node footer button {flex-shrink:0;background:none;border:0;color:#424242;padding:1px 3px;text-decoration:underline;text-underline-offset:3px;}
+.research-board .summary-node {border-top:3px solid #555;}
+.research-board .board-context {
+  width:clamp(330px,29vw,490px);padding:0 clamp(18px,1.7vw,30px) 24px;
+  border-left:1px solid #d0d0d0;overscroll-behavior:contain;overflow-wrap:anywhere;
+}
+.research-board .board-context.deep {width:clamp(370px,35vw,610px);}
+.research-board .board-context > .toolbar {
+  top:0;min-height:46px;margin:0 0 22px;display:flex;align-items:center;
+  background:white;border-bottom:1px solid #dedede;padding:7px 0;
+}
+.research-board .board-context > .toolbar strong {font-size:13px;font-weight:600;letter-spacing:.06em;}
+.research-board .board-context > .toolbar button {min-width:32px;min-height:32px;padding:1px 7px;font-size:22px;line-height:1;color:#515151;border:0;border-radius:4px;background:none;}
+.research-board .board-context > .toolbar button:hover {background:#f1f1f1;}
+.board-detail-kind {color:#4f4f4f;font-size:12px;font-weight:600;}
+.board-detail-kind > span {color:#707070;font-weight:400;}
+.research-board .board-detail-title {margin:6px 0 22px;font-size:clamp(21px,1.65vw,29px);line-height:1.43;letter-spacing:0;color:#171717;}
+.board-note-detail h4,.board-resource-overview h4 {margin:0 0 12px;font-size:13px;color:#222;font-weight:600;}
+.board-note-detail section {margin:0 0 23px;}
+.board-note-source {border:1px solid #e1e1e1;border-left:3px solid #606060;background:#f8f8f8;border-radius:0 4px 4px 0;padding:12px 14px;}
+.board-note-source + .board-note-source {margin-top:9px;}
+.board-note-source > strong {display:block;font-size:14px;font-weight:600;line-height:1.55;}
+.board-note-source > small {display:block;color:#656565;font-size:11px;margin:3px 0 0;}
+.board-note-source blockquote {font-family:var(--serif,SimSun,serif);font-size:15px;line-height:1.75;color:#333;margin:10px 0 0;padding:0;border:0;white-space:pre-wrap;}
+.board-note-source .source-links {display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;margin-top:10px;font-size:12px;}
+.board-note-source .image-note-crop {display:block;margin-top:11px;max-height:200px;width:100%;background:#eee;}
+.board-video-range {display:flex;flex-wrap:wrap;justify-content:space-between;color:#5f5f5f;margin:16px 0 3px;font-variant-numeric:tabular-nums;}
+.board-video-range > div {position:relative;width:100%;height:4px;background:#d6d6d6;border-radius:3px;}
+.board-video-range i {position:absolute;height:100%;min-width:3px;background:#242424;transform:translateX(-1px);}
+.board-video-range small {font-size:10px;margin-top:5px;}
+.board-observation {font-size:14px;line-height:1.85;color:#343434;margin:0;white-space:pre-wrap;}
+.board-note-open {display:inline-block;padding-top:12px;border-top:1px solid #ddd;width:100%;font-size:13px;}
+.board-resource-overview {font-size:14px;line-height:1.8;margin:17px 0;}
+.board-resource-overview dl {display:grid;grid-template-columns:auto 1fr;gap:4px 16px;padding:12px 0;font-size:12px;border-block:1px solid #e3e3e3;}
+.board-resource-overview dt {color:#666;}
+.board-resource-overview dd {margin:0;}
+.board-resource-overview .muted {font-size:12px;}
+.research-board .board-context a {text-underline-offset:3px;}
+.research-board .board-context .board-chat-link {color:#555;font-size:12px;padding:8px 0 10px;text-decoration:none;}
+.research-board .board-context .board-chat-link:hover {color:#111;text-decoration:underline;}
+
+@media(max-width:760px) {
+  .research-board .workspace {position:relative;min-height:530px;}
+  .research-board .work-center {height:clamp(540px,75dvh,760px);min-height:0;}
+  .research-board .workspace.with-panel .board-context {
+    position:fixed;bottom:0;left:0;right:0;z-index:22;
+    width:100%;max-height:66dvh;min-height:30dvh;
+    border:1px solid #c8c8c8;border-radius:12px 12px 0 0;
+    box-shadow:0 -8px 35px #0002;padding:0 20px max(22px,env(safe-area-inset-bottom));
+  }
+  .research-board .board-context > .toolbar {margin-bottom:14px;}
+  .research-board .board-detail-title {margin-bottom:16px;}
+}

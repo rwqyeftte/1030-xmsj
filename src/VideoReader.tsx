@@ -1,7 +1,7 @@
 import {useEffect,useRef,useState} from 'react';
 import type {DemoContent,Resource} from '../contracts/domain';
 import {useDraft} from './ui';
-import {hasDemoVideo,videoTime,videoAnchorLabel,type VideoAnchor} from './video-annotations';
+import {courseVideo,hasDemoVideo,videoTime,videoAnchorLabel,type VideoAnchor} from './video-annotations';
 import demoVideo from './assets/video-notes-demo.webm';
 import demoPoster from './assets/video-notes-poster.png';
 import {resourceTitle} from './presentation';
@@ -15,7 +15,8 @@ export default function VideoReader({resource,content,anchor,onSelect,comparison
   const [time,setTime]=useState(0),[ready,setReady]=useState(false),[error,setError]=useState('');
   const [rangeStart,setRangeStart]=useState<number|null>(null),[rangeError,setRangeError]=useState('');
   const [playing,setPlaying]=useState(false);
-  const available=hasDemoVideo(resource,content);
+  const course=courseVideo(resource,content);
+  const available=!!course||hasDemoVideo(resource,content);
   function seek(value:number){
     const el=player.current;if(!el||!ready)return;
     clipEnd.current=null;el.pause();el.currentTime=Math.max(0,Math.min(value,el.duration));
@@ -40,8 +41,8 @@ export default function VideoReader({resource,content,anchor,onSelect,comparison
   }
   if(!available)return <div className="video-unavailable"><h3>暂未提供可播放的视频</h3><p>已有笔记仍然保留，可在个人笔记中查看。</p></div>;
   return <div className="video-reader">
-    <p className="video-demo-caption">演示短片 · 20 秒 · 无声</p>
-    <video ref={player} controls playsInline preload="metadata" poster={demoPoster} src={demoVideo} aria-label={resourceTitle(resource)+'，视频播放器'}
+    <p className="video-demo-caption">{course?`视频节选 · ${content.durationSec} 秒`:'演示短片 · 20 秒 · 无声'}</p>
+    <video ref={player} controls playsInline preload="metadata" poster={course?.image??demoPoster} src={course?.file??demoVideo} aria-label={resourceTitle(resource)+'，视频播放器'}
       onLoadedMetadata={e=>{const el=e.currentTarget;setReady(true);setError('');const at=anchor?.startSec??position.time;el.currentTime=Number.isFinite(at)?Math.max(0,Math.min(at,el.duration)):0;setTime(el.currentTime);}}
       onTimeUpdate={e=>{const el=e.currentTarget;if(clipEnd.current!==null&&el.currentTime>=clipEnd.current){const end=clipEnd.current;clipEnd.current=null;el.pause();el.currentTime=end;}setTime(el.currentTime);if(Math.floor(el.currentTime)!==lastPosition.current){lastPosition.current=Math.floor(el.currentTime);setPosition({time:el.currentTime});}}}
       onPlay={()=>{setPlaying(true);setError('');}} onPause={e=>{setPlaying(false);setPosition({time:e.currentTarget.currentTime});}}
@@ -55,6 +56,6 @@ export default function VideoReader({resource,content,anchor,onSelect,comparison
     {rangeStart!==null?<p className="video-help" role="status">继续播放或拖动进度条，找到片段结尾后点击“结束并记笔记”。</p>:!anchor&&<p className="video-help">看到值得记录的内容时，点击“记笔记”，视频会暂停并自动带上时间。</p>}
     {rangeError&&<p className="error" role="alert">{rangeError}</p>}
     {anchor&&rangeStart===null&&<div className="video-selected-time" data-testid="anchor-highlight"><span>{anchor.point?'笔记时间':'笔记片段'} <strong>{videoAnchorLabel(anchor)}</strong></span><button disabled={!ready} onClick={()=>seek(anchor.startSec)}>返回此处</button><button disabled={!ready||!!anchor.point&&anchor.startSec>=content.durationSec} onClick={playing?()=>player.current?.pause():playSelection}>{playing?'暂停':anchor.point?'从这里播放':'播放此片段'}</button></div>}
-    <nav className="video-chapters" aria-label="视频目录">{content.segments.map(s=><button key={s.startSec} disabled={!ready} aria-current={time>=s.startSec&&time<s.endSec?'true':undefined} onClick={()=>seek(s.startSec)}><time>{videoTime(s.startSec)}</time>{s.text.replace(/^合成片段[^：]*：/,'')}</button>)}</nav>
+    {content.segments.length>0&&<nav className="video-chapters" aria-label="视频目录">{content.segments.map(s=><button key={s.startSec} disabled={!ready} aria-current={time>=s.startSec&&time<s.endSec?'true':undefined} onClick={()=>seek(s.startSec)}><time>{videoTime(s.startSec)}</time>{s.text.replace(/^合成片段[^：]*：/,'')}</button>)}</nav>}
   </div>;
 }

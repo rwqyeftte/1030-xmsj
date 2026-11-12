@@ -1,46 +1,38 @@
-# GitHub Pages 发布准备
+# 文献研究中心 · GitHub Pages 发布说明
 
-当前正式公开站点：https://rwqyeftte.github.io/1030-xmsj/
+Pages 托管检索、精读、笔记和研究画布的静态前端。模型请求由单独部署的 Node.js 服务处理。[打开网站](https://rwqyeftte.github.io/1030-xmsj/) · [源码仓库](https://github.com/rwqyeftte/1030-xmsj)
 
-源码已上传本仓库，GitHub Pages 已启用。首次云端构建、测试与发布成功；未登录浏览器已验证 16 页直开/刷新和完整研究流程。下列步骤供后续维护使用。
+## 本地运行与发布前检查
 
-目标仓库：https://github.com/rwqyeftte/1030-xmsj
+使用 Node.js 22，在仓库根目录运行 `npm ci` 安装依赖，`npm run dev` 启动开发服务器。`npm test` 运行单元测试，`npm run build:pages` 完成类型检查并将前端写入 `dist-pages/`。构建后可用 `npm run test:browser` 启动临时静态服务器和隔离的本机 Chrome 会话，检查页面与研究流程。
 
-用户已授权将此发布版本上传至上述仓库并启用 GitHub Pages。实际发布结果请查看仓库 Actions。
+2026 年 11 月 13 日的精读与画布交互可按下面的步骤复核。
 
-## 发布方式
+1. 打开《老字号包装的叙事性设计研究》的文本精读，用「本篇结构」跳到「2.1 叙事主题」。目录保留收录章节的原编号。[文章精读](https://rwqyeftte.github.io/1030-xmsj/#/resources/A02/read?view=text)
+2. 选中一段文字，记下观察或直接点「放到项目画布」。独立阅读时可选择或创建项目，从项目内阅读时沿用当前项目。PDF 段落、图片区域、视频时间点与片段也支持放入画布。
+3. 点「查看画布卡片」并单击卡片，查看原始来源与个人观察。「回到原文」可定位阅读位置，「返回原工作版位置」可找到原来的卡片。桌面详情显示在右栏，手机上从底部打开。
 
-1. 维护此仓库时直接检查、提交当前源码；需要单独交付源码包时运行 `npm run package:pages`，使用输出的 `release/1030-xmsj-时间戳/` 目录。不要上传整个原工程目录，也不要将 ZIP 文件本身作为网站。
-2. 经明确授权后，将修改提交到目标仓库 `main` 分支。保留 `.github/workflows/deploy-pages.yml`，排除截图、测试导出结果和本机缓存。
-3. 在仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**。
-4. 在 **Actions → Publish research prototype to GitHub Pages → Run workflow** 手动发布。推送到 main 会自动触发发布。
-5. 成功后从该次工作流的部署结果打开网站。预期地址为 `https://rwqyeftte.github.io/1030-xmsj/`；已发布并完成线上检查。
+## 发布静态前端
 
-## 本地使用与检查
+1. 在仓库的 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**。
+2. 将源码、所需素材、锁文件、测试和 `.github/workflows/deploy-pages.yml` 提交至 `main`。推送会触发工作流，也可在 **Actions → Publish research prototype to GitHub Pages → Run workflow** 手动发布。
+3. 在对应提交的工作流中确认测试、构建和部署成功，再打开部署链接。Pages 使用 `/1030-xmsj/#/search` 等地址，刷新和直接打开时均从目录首页载入。本地开发使用 `/search`。[发布记录](https://github.com/rwqyeftte/1030-xmsj/actions/workflows/deploy-pages.yml)
 
-需要 Node.js 22 和 npm。安装依赖：`npm ci`。开发：`npm run dev`。
+单独交付源码包时运行 `npm run package:pages`。输出目录 `release/1030-xmsj-时间戳/` 内的 `PUBLISH_MANIFEST.json` 记录本次打包文件的大小和 SHA-256。脚本排除开发缓存、浏览器数据、测试截图和本机环境变量文件。
 
-`npm test` 运行领域、检索与路由测试；`npm run build` 构建原本地模式；`npm run build:pages` 构建发布模式到 `dist-pages/`。
+## 配置独立 AI 服务
 
-发布包的 `npm run test:browser` 在构建发布版后运行，使用本机 Chrome 和临时静态服务器检查真实路径，结束后关闭测试服务器。它会创建隔离浏览器上下文，不读取你正在使用的浏览器数据。
+如需公开版使用 DeepSeek 辅助检索、专题与阅读问答或 PDF 选段解读，需要同时配置后端和前端构建。
 
-Pages 使用 `/1030-xmsj/#/search` 等地址。静态服务器只请求目录首页，路由和查询参数保留在 `#` 后，因此支持直接打开、刷新和前进后退。本机开发继续使用 `/search`。
+1. 在支持 Node.js 22 和 HTTPS 的后端部署这份源码，安装依赖，在后端的 Secret 中设置 `DEEPSEEK_API_KEY`，并设置 `READER_SITE_ORIGIN=https://rwqyeftte.github.io`。
+2. 使用 `npm run start:reader-api` 启动服务，监听托管平台提供的 `PORT`。单进程最多同时处理 2 个请求，每小时最多受理 30 个请求，访客共用该进程的额度。
+3. 在 GitHub 仓库的 Actions 变量中，将 `VITE_READER_API_URL` 设为后端完整的 HTTPS 地址，以 `/api/reader` 结尾。重新运行 Pages 工作流，使公开接口地址进入前端构建。密钥保存在后端。
+4. 打开已部署的站点，提交一次辅助检索或阅读问题来验证模型响应。静态发布成功仅能确认前端已部署。前端缺少接口地址时，会提示服务尚未配置。
 
-## 包含的内容
+本地开发可通过服务端环境变量或被 Git 忽略的 `.env.local` 提供密钥。服务端支持 Windows 系统代理和 `DEEPSEEK_HTTPS_PROXY`。运行 `node tests/reader-ai.mjs` 可检查检索流程，附加 `--live` 会调用真实模型。
 
-- 运行源码、样式、依赖锁文件、构建配置、公开演示目录和评审数据、自动化发布工作流及单元测试。
-- 课程目录题名、来源 PDF 文件名与页码引用将出现在公开代码和网站中。原 PDF 不包含在发布包里。
-- 合成文本、图像/时间轴演示数据、演示笔记与项目。标为 PRIVATE-DEMO 的种子记录也是合成示例，不是浏览器中上传的真实文件。
-- 每个发布包的 `PUBLISH_MANIFEST.json` 列出实际文件、大小和 SHA-256，便于核对。
+## 资料范围与保存位置
 
-## 不包含的内容
-
-不打包 `references/`、任务包原件、Figma 工作记录与旧导出文件、截图、浏览器配置、下载文件、备份 ZIP、日志、缓存、`node_modules/`、本机 `dist/`。发布构建也不会复制 `public/figma-prototype-files/`，不会载入 Figma capture 调试脚本。
-
-## 使用范围
-
-这是静态研究准备原型。登录、AI/OCR和权限为演示能力，没有账号服务器或云数据库。每位访客的保存、项目、笔记和上传文件存于自己的浏览器，不会与其他访客共享。本机 localhost 数据不会自动迁移到线上域名。站点演示登录不是网站访问控制。
-
-首次发布通过类型检查、23 项单元测试、16 页面与 90 评审状态浏览器检查，以及完整研究操作流程。2026-10-31 更新通过 53 项单元测试和 Pages 构建，并对新增阅读笔记与画布汇总交互进行了浏览器验证。每次线上发布状态以仓库 Actions 为准。
-
-官方参考：https://vite.dev/guide/static-deploy.html#github-pages
+- 课程节选包括论文 A01–A04、书籍 B01–B04 的 8 个实际 PDF 文件，以及 V01–V03 的 3 段视频预览。各条编目注明课程包未附公开再分发许可。I01–I18 的 18 张课程图片预览标为原作权利信息未载明。
+- 保温瓶专题包含 3 张附来源和权利标注的图像，分别标注为 CC0、作者释入公有领域、文件页标注美国公有领域。专题另有原创导读。每件图像的详情页可以核对其来源。
+- 合成种子资料、示例笔记和项目用于展示研究流程。`PRIVATE-DEMO` 标记的是合成记录。访问者自行上传的文件、项目和笔记保存在自己的浏览器中，问答记录保存在当前标签页的会话中。

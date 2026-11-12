@@ -1,0 +1,8 @@
+.reading-canvas-action { display: grid; gap: .6rem; }
+.reading-canvas-action .reading-canvas-place { width: 100%; display: inline-flex; justify-content: center; align-items: center; gap: .55rem; background: #fff; color: #292929; border: 1px solid #a6a6a6; }
+.reading-canvas-action .reading-canvas-place:hover:not(:disabled) { border-color: #333; background: #f6f6f6; }
+.reading-canvas-mark { font: 18px/1 sans-serif; }
+.reading-canvas-receipt { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: .3rem .8rem; padding: .7rem 0; border-block: 1px solid #d5d5d5; }
+.reading-canvas-receipt small { color: #595959; overflow-wrap: anywhere; }
+.reading-canvas-receipt a { font-size: .85rem; }
+.reading-canvas-action .reading-canvas-secondary { justify-self: start; display: inline-flex; align-items: center; gap: .4rem; font-size: .8rem; }

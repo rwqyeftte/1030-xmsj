@@ -154,3 +154,16 @@
   .image-zoom button { padding: 5px 8px; }
   .image-reading-hint { flex-wrap: wrap; }
 }
+
+.pdf-study-return { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.reader-chat-tool { min-width: 0; }
+.reader-chat-passage { margin: 0 0 12px; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+.reader-chat-passage summary { cursor: pointer; color: #555; font-size: 13px; }
+.reader-chat-passage label { display: block; padding-top: 10px; }
+.reader-chat-passage textarea { margin: 6px 0; }
+.reader-chat-unavailable p { font-size: 14px; color: #555; }
+.reader-page .reader-layout > .pdf-study-viewer { padding: 0; border: 0; }
+@media (min-width: 761px) {
+  .reader-page .pdf-study-viewer .pdf-reader { height: 100%; display: flex; flex-direction: column; }
+  .reader-page .pdf-study-viewer .pdf-viewport { flex: 1; min-height: 0; }
+}

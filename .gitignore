@@ -4,5 +4,9 @@ dist-pages/
 release/
 .npm-cache/
 test-results/
+tests/*-results.json
+tests/exports/
+screenshots/flow-failure-*.png
+screenshots/pages-preparation/
 .env
 .env.*

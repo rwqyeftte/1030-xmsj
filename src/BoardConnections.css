@@ -1,0 +1,9 @@
+.research-board .board-connections { inset: 0 auto auto 0; overflow: visible; }
+.board-connection { color: #858585; }
+.board-connection .edge-hit-area { fill: none; stroke: transparent; stroke-width: 16; pointer-events: stroke; }
+.board-connection .edge-curve { fill: none; stroke: currentColor; stroke-width: 1.4; pointer-events: none; }
+.board-connection rect { fill: #fff; stroke: #cecece; }
+.board-connection text { fill: #575757; font: 11px var(--sans,sans-serif); }
+.board-connection:is(:hover,:focus-visible,[data-selected]) { color: #414141; }
+.board-connection:is(:hover,:focus-visible,[data-selected]) .edge-curve { stroke-width: 2; }
+.board-connection[aria-disabled=true] { cursor: default; }

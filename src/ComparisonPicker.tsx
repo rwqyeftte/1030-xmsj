@@ -1,13 +1,15 @@
 import {useState} from 'react';
 import type {Resource} from '../contracts/domain';
+import type {PaperView} from './paper-text';
+import {hasStudySource} from './featured';
 import {useApp,mediaLabels} from './store';
 import {resourceTitle} from './presentation';
 import {Modal,contextUrl,nav} from './ui';
 
-export default function ComparisonPicker({resource,projectId}:{resource:Resource;projectId?:string|null}) {
+export default function ComparisonPicker({resource,projectId,pdfPage,paperView}:{paperView?:PaperView;pdfPage?:number;resource:Resource;projectId?:string|null}) {
   const {data,review}=useApp();
   const [open,setOpen]=useState(false),[query,setQuery]=useState(''),[selected,setSelected]=useState('');
-  const readable=(r:Resource)=>r.access==='demo_readable'&&(r.visibility==='public'||r.ownerId===data.session.userId)&&data.contents.some(c=>c.id===r.contentId&&c.resourceId===r.id&&c.versionId===r.versionId);
+  const readable=(r:Resource)=>(r.visibility==='public'||r.ownerId===data.session.userId)&&hasStudySource(data,r);
   const currentReadable=readable(resource)&&!review.includes('source-missing');
   const candidates=data.resources.filter(r=>r.id!==resource.id&&readable(r));
   const term=query.trim().toLocaleLowerCase();
@@ -17,6 +19,8 @@ export default function ComparisonPicker({resource,projectId}:{resource:Resource
     if(!currentReadable||!chosen)return;
     const params=new URLSearchParams({left:resource.id,right:chosen.id});
     if(projectId)params.set('projectId',projectId);
+    if(pdfPage)params.set('leftPage',String(pdfPage));
+    if(paperView)params.set('leftView',paperView);
     const destination=contextUrl('/compare?'+params.toString());
     setOpen(false);nav(destination);
   }

@@ -1,16 +1,20 @@
 import {videoAnchorLabel} from './video-annotations';
 import {currentLocation} from './routing';
-import React, {createContext, useContext, useEffect, useRef, useState} from 'react';
+import {freeCardPosition} from './board-geometry';
+import React, {createContext, useContext, useEffect, useMemo, useRef, useState} from 'react';
 import seed from '../contracts/fixtures.json';
+import {paperParagraphs} from './paper-text';
+import {hasStudySource, withCourseFiles} from './featured';
+import {retireOpenCollection} from './open-collection';
 import cases from '../contracts/review_cases.json';
-import type {AppData, ObjectRef, SourceAnchor, MediaType} from '../contracts/domain';
+import type {AppData, ObjectRef, SourceAnchor} from '../contracts/domain';
 import {Modal, Link} from './ui';
 import {resourceTitle,projectTitle} from './presentation';
 import {upgradeDemoSearchExample} from './query-presets';
 import {upgradeDemoReadingExample} from './reader-example';
 
 export const STORAGE_KEY = 'literature-center:v1:data';
-export const mediaLabels: Record<MediaType,string> = {book:'图书',article:'文章',image:'图片',video:'视频'};
+export {mediaLabels} from './presentation';
 export const uid = (prefix='id') => `${prefix}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2,8)}`;
 export function assertWritable(d:AppData, id:string) {
   const p=d.projects.find(x=>x.id===id);
@@ -35,12 +39,18 @@ export function placeNode(d:AppData,pid:string,ref:ObjectRef) {
   addMembers(d,pid,[ref]);
   const existing=d.boardNodes.find(n=>n.projectId===pid&&n.ref.kind===ref.kind&&n.ref.id===ref.id);
   if(existing) return existing;
-  const count=d.boardNodes.filter(n=>n.projectId===pid).length;
-  const node={id:uid('node'),projectId:pid,ref:{...ref},x:60+(count%3)*290,y:60+Math.floor(count/3)*210,width:260,height:160,groupId:null};
+  const occupied=d.boardNodes.filter(n=>n.projectId===pid);
+  const node={id:uid('node'),projectId:pid,ref:{...ref},...freeCardPosition(occupied),width:260,height:160,groupId:null};
   d.boardNodes.push(node);return node;
 }
 export function anchorLabel(a:SourceAnchor) {
+  if(a.kind==='text'){
+    const paragraphs=paperParagraphs(a.resourceId);
+    const start=paragraphs.find(p=>p.id===a.paragraphId)?.page,end=paragraphs.find(p=>p.id===a.endParagraphId)?.page;
+    if(start)return `论文节选第 ${start}${end&&end!==start?'–'+end:''} 页 · 选文`;
+  }
   if(a.kind==='text') return a.endParagraphId&&a.endParagraphId!==a.paragraphId?`选文 ${a.paragraphId} — ${a.endParagraphId}`:`选文 ${a.paragraphId}`;
+  if(a.kind==='pdf') return `PDF 第 ${a.page} 页`+(a.selection?' · 原页选段':'');
   if(a.kind==='image') return `图像选区 (${Math.round(a.x*100)}%, ${Math.round(a.y*100)}%) · ${Math.round(a.width*100)}% × ${Math.round(a.height*100)}%`;
   if(a.kind==='video') return (a.point?'时间点 ':'时间片段 ')+videoAnchorLabel(a);
   return a.label;
@@ -87,7 +97,8 @@ export function guardArchived(before:AppData,after:AppData) {
 export function commitData(before:AppData,recipe:(draft:AppData)=>void,persist:(serialized:string)=>void):AppData {
   const draft=structuredClone(before);recipe(draft);guardArchived(before,draft);persist(JSON.stringify(draft));return draft;
 }
-type Ctx={data:AppData;commit:(recipe:(draft:AppData)=>void,message?:string)=>boolean;status:string;error:string;notify:(msg:string)=>void;requireLogin:(action:()=>void)=>void;openProjectPicker:(refs:ObjectRef[])=>void;saveResource:(id:string)=>void;openCollectionPicker:(refs:ObjectRef[])=>void;review:string;reviewId:string;reviewState:string;reset:()=>void};
+type CanvasDestination={makeNoteRef:(data:AppData,projectId:string)=>ObjectRef;onPlaced:(projectId:string,ref:ObjectRef)=>void};
+type Ctx={chooseCanvasProject:(destination:CanvasDestination)=>void;data:AppData;commit:(recipe:(draft:AppData)=>void,message?:string)=>boolean;status:string;error:string;notify:(msg:string)=>void;requireLogin:(action:()=>void)=>void;openProjectPicker:(refs:ObjectRef[])=>void;saveResource:(id:string)=>void;openCollectionPicker:(refs:ObjectRef[])=>void;review:string;reviewId:string;reviewState:string;reset:()=>void};
 const Context=createContext<Ctx|null>(null);
 export const useApp=()=>{const x=useContext(Context);if(!x)throw new Error('AppProvider is required');return x;};
 export function AppProvider({children}:{children:React.ReactNode}) {
@@ -96,14 +107,14 @@ export function AppProvider({children}:{children:React.ReactNode}) {
   const [data,setData]=useState<AppData>(()=>load(initialReview));const current=useRef(data);current.current=data;
   const [status,setStatus]=useState('idle');const [error,setError]=useState('');const [notice,setNotice]=useState('');
   const [login,setLogin]=useState(false);const pending=useRef<null|(()=>void)>(null);
-  const [picker,setPicker]=useState<{type:'project'|'collection';refs:ObjectRef[]}|null>(null);
+  const [picker,setPicker]=useState<{type:'project'|'collection';refs:ObjectRef[];canvas?:CanvasDestination}|null>(null);
   const [target,setTarget]=useState('');const [newName,setNewName]=useState('');const [alsoPlace,setAlsoPlace]=useState(false);const [localError,setLocalError]=useState('');
   const serialized=useRef('');
   function load(id:string):AppData {
     try {const store=id?sessionStorage:localStorage;const raw=store.getItem(id?`${STORAGE_KEY}:review:${id}`:STORAGE_KEY);if(raw){const parsed=JSON.parse(raw);if(parsed.schemaVersion===1&&Array.isArray(parsed.resources)){
       if(id)return parsed;
-      const next=upgradeDemoReadingExample(upgradeDemoSearchExample(parsed));
-      if(next!==parsed){try{store.setItem(STORAGE_KEY,JSON.stringify(next));}catch{return parsed;}}
+      const next=retireOpenCollection(upgradeDemoReadingExample(upgradeDemoSearchExample(parsed)));
+      if(next!==parsed){try{store.setItem(STORAGE_KEY,JSON.stringify(next));}catch{return next;}}
       return next;
     }}}
     catch{/* A readable seed remains available when browser storage is disabled. A write reports the error. */}
@@ -122,7 +133,7 @@ export function AppProvider({children}:{children:React.ReactNode}) {
     } catch(e) {setNotice('');setError(e instanceof Error?e.message:'保存失败，草稿未丢弃。');setStatus('error');return false;}
   };
   const requireLogin=(action:()=>void)=>{if(current.current.session.userId)action();else{pending.current=action;setLogin(true);}};
-  const openPicker=(type:'project'|'collection',refs:ObjectRef[])=>requireLogin(()=>{setPicker({type,refs});const qs=new URLSearchParams(currentLocation().search);setTarget(type==='project'?(qs.get('targetProjectId')||qs.get('projectId')||current.current.projects.find(p=>p.status==='active')?.id||''):(current.current.collections[0]?.id||''));setNewName('');setAlsoPlace(false);setLocalError('');});
+  const openPicker=(type:'project'|'collection',refs:ObjectRef[],canvas?:CanvasDestination)=>requireLogin(()=>{setPicker({type,refs,canvas});const qs=new URLSearchParams(currentLocation().search);setTarget(canvas?(current.current.projects.find(p=>p.status==='active'&&p.ownerId===current.current.session.userId)?.id||''):type==='project'?(qs.get('targetProjectId')||qs.get('projectId')||current.current.projects.find(p=>p.status==='active')?.id||''):(current.current.collections[0]?.id||''));setNewName('');setAlsoPlace(false);setLocalError('');});
   const saveResource=(id:string)=>requireLogin(()=>commit(d=>{if(!canRead(d,{kind:'resource',id}))throw new Error('资料不可访问。');if(!d.personalSaves.some(s=>s.userId===d.session.userId&&s.resourceId===id))d.personalSaves.push({userId:d.session.userId!,resourceId:id,savedAt:new Date().toISOString()});},'资料已保存到“全部资料”；尚未加入收藏夹或项目。'));
   const reset=async()=>{
     if(!window.confirm('重置本应用演示资料、笔记、项目和草稿？只清理文献研究中心的存储，不影响其他网站和原始任务文件。'))return;
@@ -131,21 +142,35 @@ export function AppProvider({children}:{children:React.ReactNode}) {
   const confirmPicker=()=>{
     if(!picker)return;if(!target&&!newName.trim()){setLocalError('请选择目标或输入新名称。');return;}
     let pid=target;let added=0;let existing=0;
+    let placement:ReturnType<typeof placeNode>|undefined;
     const ok=commit(d=>{
       if(newName.trim()) {pid=uid(picker.type);if(picker.type==='project'){d.projects.push({id:pid,ownerId:d.session.userId!,title:newName.trim(),question:'',status:'active',updatedAt:new Date().toISOString(),isDemo:true});d.boardViews.push({projectId:pid,x:0,y:0,zoom:1,selectedNodeIds:[],mode:'overview',view:'board'});}else d.collections.push({id:pid,ownerId:d.session.userId!,title:newName.trim(),description:'',members:[],revision:1});}
-      if(picker.type==='project') {existing=picker.refs.filter(ref=>d.projectMembers.some(m=>m.projectId===pid&&m.ref.id===ref.id&&m.ref.kind===ref.kind)).length;addMembers(d,pid,picker.refs);if(alsoPlace)picker.refs.forEach(ref=>placeNode(d,pid,ref));}
+      if(picker.canvas) placement=placeNode(d,pid,picker.canvas.makeNoteRef(d,pid));
+      else if(picker.type==='project') {existing=picker.refs.filter(ref=>d.projectMembers.some(m=>m.projectId===pid&&m.ref.id===ref.id&&m.ref.kind===ref.kind)).length;addMembers(d,pid,picker.refs);if(alsoPlace)picker.refs.forEach(ref=>placeNode(d,pid,ref));}
       else {const c=d.collections.find(x=>x.id===pid&&x.ownerId===d.session.userId);if(!c)throw new Error('收藏夹不可访问');for(const ref of picker.refs){if(!canRead(d,ref))throw new Error('所选资料已失效');if(c.members.some(m=>m.id===ref.id&&m.kind===ref.kind))existing++;else c.members.push({...ref});}c.revision++;}
       added=picker.refs.length-existing;
     });
+    if(ok&&picker.canvas&&placement){setNotice('卡片已放到项目画布');picker.canvas.onPlaced(pid,placement.ref);setPicker(null);return;}
     if(ok){setNotice(`${picker.type==='project'?'项目':'收藏夹'}：新增 ${added} 项，已有 ${existing} 项。${picker.type==='project'&&!alsoPlace?'资料已进入项目文件，尚未新增画布摆放。':''}`);setPicker(null);}
   };
-  const value:Ctx={data,commit,status,error,notify:setNotice,requireLogin,openProjectPicker:refs=>openPicker('project',refs),saveResource,openCollectionPicker:refs=>openPicker('collection',refs),review:reviewId,reviewId,reviewState:review,reset};
+  const displayedData=useMemo(()=>reviewId?data:withCourseFiles(data),[data,reviewId]);
+  const value:Ctx={chooseCanvasProject:destination=>openPicker('project',[],destination),data:displayedData,commit,status,error,notify:setNotice,requireLogin,openProjectPicker:refs=>openPicker('project',refs),saveResource,openCollectionPicker:refs=>openPicker('collection',refs),review:reviewId,reviewId,reviewState:review,reset};
   return <Context.Provider value={value}>{children}
     {reviewId&&!cases.cases.some(c=>c.id===reviewId)&&<div className="notice" role="alert">无法识别评审状态“{reviewId}”。当前使用隔离演示数据，不影响默认保存。<Link to="/__review">返回评审目录选择有效状态</Link></div>}
     {notice&&<div className="app-toast" role="status"><span>{notice}</span><button aria-label="关闭反馈" onClick={()=>setNotice('')}>×</button></div>}
     {error&&<div className="persistence-error" role="alert"><strong>未保存</strong> · {error}<button onClick={()=>download('文献研究中心_当前已存数据.json',JSON.stringify(current.current,null,2),'application/json')}>导出已存数据</button><button aria-label="关闭保存错误" onClick={()=>setError('')}>×</button></div>}
     {login&&<Modal title="本地演示登录" onClose={()=>{pending.current=null;setLogin(false);}}><p>只建立本机演示会话，不需要密码，不连接账号服务。前端演示不是生产权限系统。</p><div className="actions"><button onClick={()=>{pending.current=null;setLogin(false);}}>取消并保留当前内容</button><button className="primary" onClick={()=>{const action=pending.current;if(commit(d=>{d.session.userId='demo-user';},'已进入本地演示会话')){pending.current=null;setLogin(false);action?.();}}}>进入演示并继续</button></div></Modal>}
-    {picker&&<Modal title={picker.type==='project'?'加入项目':'加入收藏夹'} onClose={()=>setPicker(null)}><div data-testid="project-picker"><p>选中 {picker.refs.length} 项。引用原记录，不复制原件。{picker.type==='project'?'默认仅加入项目文件栏。':''}</p><label>选择{picker.type==='project'?'项目':'收藏夹'}<select value={target} onChange={e=>{setTarget(e.target.value);setNewName('');}}><option value="">请选择</option>{picker.type==='project'?data.projects.filter(p=>p.ownerId===data.session.userId).map(p=><option key={p.id} value={p.id} disabled={p.status==='archived'}>{projectTitle(p)}{p.status==='archived'?'（归档只读）':''}</option>):data.collections.map(c=><option key={c.id} value={c.id}>{c.title}</option>)}</select></label><label>或新建{picker.type==='project'?'项目':'收藏夹'}<input value={newName} onChange={e=>setNewName(e.target.value)} placeholder="名称（必填）"/></label>{picker.type==='project'&&<label className="check"><input type="checkbox" checked={alsoPlace} onChange={e=>setAlsoPlace(e.target.checked)}/>同时放到工作版（可选）</label>}<div className="picker-summary">{picker.refs.map(ref=>{const r=ref.kind==='resource'?data.resources.find(r=>r.id===ref.id):data.notes.find(r=>r.id===ref.id);const exists=picker.type==='project'?data.projectMembers.some(m=>m.projectId===target&&m.ref.id===ref.id&&m.ref.kind===ref.kind):data.collections.find(c=>c.id===target)?.members.some(m=>m.id===ref.id&&m.kind===ref.kind);return <p key={`${ref.kind}:${ref.id}`}>{r?resourceTitle(r):ref.id} <span className="badge">{exists?'已存在，不重复添加':ref.kind==='resource'&&data.resources.find(r=>r.id===ref.id)?.access!=='demo_readable'?'新增目录引用':'新增引用'}</span></p>;})}</div>{localError&&<p role="alert">{localError}</p>}{error&&<p role="alert">{error}</p>}<div className="actions"><button onClick={()=>setPicker(null)}>取消</button><button className="primary" onClick={confirmPicker}>确认加入</button></div><small>归档项目只读。<Link to="/me/projects">前往工作台管理项目</Link></small></div></Modal>}
+    {picker&&<Modal title={picker.canvas?'选择项目画布':picker.type==='project'?'加入项目':'加入收藏夹'} onClose={()=>setPicker(null)}>
+      <div data-testid="project-picker">
+        {!picker.canvas&&<p>选中 {picker.refs.length} 项。引用原记录，不复制原件。{picker.type==='project'?'默认仅加入项目文件栏。':''}</p>}
+        <label>选择{picker.type==='project'?'项目':'收藏夹'}<select value={target} onChange={e=>{setTarget(e.target.value);setNewName('');}}><option value="">请选择</option>{picker.type==='project'?data.projects.filter(p=>p.ownerId===data.session.userId&&(!picker.canvas||p.status==='active')).map(p=><option key={p.id} value={p.id} disabled={p.status==='archived'}>{projectTitle(p)}{p.status==='archived'?'（归档只读）':''}</option>):data.collections.map(c=><option key={c.id} value={c.id}>{c.title}</option>)}</select></label>
+        <label>或新建{picker.type==='project'?'项目':'收藏夹'}<input value={newName} onChange={e=>{setNewName(e.target.value);if(picker.canvas&&e.target.value)setTarget('');}} placeholder={picker.canvas?'输入新项目名称':'名称（必填）'}/></label>
+        {picker.type==='project'&&!picker.canvas&&<label className="check"><input type="checkbox" checked={alsoPlace} onChange={e=>setAlsoPlace(e.target.checked)}/>同时放到工作版（可选）</label>}
+        {!picker.canvas&&<div className="picker-summary">{picker.refs.map(ref=>{const resource=ref.kind==='resource'?displayedData.resources.find(r=>r.id===ref.id):undefined;const r=ref.kind==='resource'?resource:displayedData.notes.find(n=>n.id===ref.id);const exists=picker.type==='project'?data.projectMembers.some(m=>m.projectId===target&&m.ref.id===ref.id&&m.ref.kind===ref.kind):data.collections.find(c=>c.id===target)?.members.some(m=>m.id===ref.id&&m.kind===ref.kind);return <p key={`${ref.kind}:${ref.id}`}>{r?resourceTitle(r):ref.id} <span className="badge">{exists?'已存在，不重复添加':ref.kind==='resource'&&!hasStudySource(displayedData, resource)?'新增目录引用':'新增引用'}</span></p>;})}</div>}
+        {localError&&<p role="alert">{localError}</p>}{error&&<p role="alert">{error}</p>}
+        <div className="actions"><button onClick={()=>setPicker(null)}>取消</button><button className="primary" onClick={confirmPicker}>{picker.canvas?'放入画布':'确认加入'}</button></div>
+        {!picker.canvas&&<small>归档项目只读。<Link to="/me/projects">前往工作台管理项目</Link></small>}
+      </div></Modal>}
   </Context.Provider>;
 }
 export const reviewCases=cases;

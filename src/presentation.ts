@@ -1,4 +1,6 @@
-import type { Project, Resource } from '../contracts/domain';
+import type { MediaType, Project, Resource } from '../contracts/domain';
+
+export const mediaLabels: Record<MediaType,string> = {book:'图书',paper:'论文',article:'文章',image:'图片',video:'视频'};
 
 // Figma's revised display names; source records and stable references stay intact.
 // Exact source-name checks keep user edits and imports authoritative.

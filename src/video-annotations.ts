@@ -1,3 +1,4 @@
+import {featuredMaterial} from './featured';
 import type {AppData,DemoContent,Resource,SourceAnchor} from '../contracts/domain';
 
 export type VideoAnchor=Extract<SourceAnchor,{kind:'video'}>;
@@ -10,12 +11,19 @@ export function validVideoAnchor(a:VideoAnchor,duration:number){
   return [a.startSec,a.endSec,duration].every(Number.isFinite)&&duration>0&&a.startSec>=0&&a.endSec<=duration
     &&(a.point===true?a.startSec===a.endSec:a.startSec<a.endSec);
 }
-// Only the supplied demonstration has an authored, bundled video. Never substitute it for another source.
+// The bundled demonstration belongs to this exact record and version.
 export function hasDemoVideo(r:Resource|undefined,c:DemoContent|undefined){
   return !!r&&r.id==='DEMO-VIDEO'&&r.isDemo&&r.access==='demo_readable'&&r.contentId==='content-DEMO-VIDEO'
     &&r.versionId==='DEMO-VIDEO-v1'&&c?.id===r.contentId&&c.resourceId===r.id&&c.versionId===r.versionId
     &&c.kind==='video_timeline'&&c.durationSec===20;
 }
+export function courseVideo(resource:Resource,content:DemoContent|undefined){
+  const item=featuredMaterial(resource);
+  if(item?.mediaType==='video' && content?.kind==='video_timeline'
+    && content.id===resource.contentId && content.resourceId===resource.id && content.versionId===resource.versionId
+    && content.durationSec===item.source.durationSec) return item;
+}
+
 export function videoNotes(data:AppData,resourceId:string){
   const resource=data.resources.find(r=>r.id===resourceId),content=data.contents.find(c=>c.id===resource?.contentId);
   if(content?.kind!=='video_timeline'||content.resourceId!==resourceId||content.versionId!==resource?.versionId)return [];

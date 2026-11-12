@@ -1,0 +1,213 @@
+{
+  "resources": [
+    {
+      "id": "HK-FLASKS",
+      "versionId": "HK-FLASKS-v1",
+      "title": "香港历史博物馆展柜中的保温瓶",
+      "mediaType": "image",
+      "catalogOrigin": "open_collection",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "demo_readable",
+      "authors": [
+        "Daderot"
+      ],
+      "sourceDate": "2014-07-27",
+      "sourceDateType": "recording",
+      "dateNote": "拍摄日期；展品制作年代未详。",
+      "description": "展柜里并列放着几种高度和颜色不同的保温瓶。可以沿瓶身上端逐一比较盖子的外形，再用展签核对具体器物。",
+      "subjects": [
+        "保温瓶",
+        "展陈摄影"
+      ],
+      "provenance": {
+        "kind": "open_collection",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thermos_bottles_-_Hong_Kong_Museum_of_History_-_DSC01035.JPG",
+        "rightsLabel": "CC0 1.0 · Daderot 摄影",
+        "note": "拍摄日期；展品制作年代未详。"
+      },
+      "availabilityNote": "可查看图像、放大细节并记录选区笔记。",
+      "rightsStatus": "documented",
+      "contentId": "content-HK-FLASKS",
+      "createdAt": "2026-11-12T00:00:00Z"
+    },
+    {
+      "id": "FLASK-PARTS",
+      "versionId": "FLASK-PARTS-v1",
+      "title": "保温瓶的外壳与玻璃内胆",
+      "mediaType": "image",
+      "catalogOrigin": "open_collection",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "demo_readable",
+      "authors": [
+        "Julo"
+      ],
+      "sourceDate": "2006-05-27",
+      "sourceDateType": "publication",
+      "dateNote": "文件首次上传日期；拍摄日期及产品年代未详。",
+      "description": "左侧是装配好的保温瓶，右侧平放着外壳、反光玻璃内胆和瓶口配件。适合对照零件的位置和装配关系。",
+      "subjects": [
+        "保温瓶",
+        "产品结构"
+      ],
+      "provenance": {
+        "kind": "open_collection",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Termosy-elementy.jpg",
+        "rightsLabel": "作者 Julo 将照片释入公有领域",
+        "note": "文件首次上传日期；拍摄日期及产品年代未详。"
+      },
+      "availabilityNote": "可查看图像、放大细节并记录选区笔记。",
+      "rightsStatus": "documented",
+      "contentId": "content-FLASK-PARTS",
+      "createdAt": "2026-11-12T00:00:00Z"
+    },
+    {
+      "id": "THERMOS-AD",
+      "versionId": "THERMOS-AD-v1",
+      "title": "Thermos the Bottle｜加拿大杂志广告",
+      "mediaType": "image",
+      "catalogOrigin": "open_collection",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "demo_readable",
+      "authors": null,
+      "sourceDate": null,
+      "sourceDateType": null,
+      "dateNote": "文件标题及日期栏记为 1909；来源栏记为《Rod and Gun in Canada》1920 年 10 月，第 567 页。确切刊期有待核对。",
+      "description": "广告把瓶身插图与保温时长排在左侧，右侧用成段文字介绍户外用途。页面下方还画出了携带盒，可与实物照片对读。",
+      "subjects": [
+        "保温瓶",
+        "印刷广告"
+      ],
+      "provenance": {
+        "kind": "open_collection",
+        "sourceLabel": "Wikimedia Commons",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thermos_the_Bottle,_ad_from_Rod_and_Gun_in_Canada,_1909.jpg",
+        "rightsLabel": "文件页标注为美国公有领域（PD-US-expired）",
+        "note": "文件标题及日期栏记为 1909；来源栏记为《Rod and Gun in Canada》1920 年 10 月，第 567 页。确切刊期有待核对。"
+      },
+      "availabilityNote": "可查看图像、放大细节并记录选区笔记。",
+      "rightsStatus": "documented",
+      "contentId": "content-THERMOS-AD",
+      "createdAt": "2026-11-12T00:00:00Z"
+    },
+    {
+      "id": "FLASK-GUIDE",
+      "versionId": "FLASK-GUIDE-v1",
+      "title": "怎样读一组保温瓶资料",
+      "mediaType": "article",
+      "catalogOrigin": "open_collection",
+      "isDemo": false,
+      "visibility": "public",
+      "ownerId": null,
+      "access": "demo_readable",
+      "authors": [
+        "本站编写"
+      ],
+      "sourceDate": "2026-11-12",
+      "sourceDateType": "publication",
+      "dateNote": "本站导读编写日期。",
+      "description": "从展柜照片、拆解照片和杂志广告入手，分别记录器物外形、装配关系和商品宣传。",
+      "subjects": [
+        "保温瓶",
+        "研究方法",
+        "设计史"
+      ],
+      "provenance": {
+        "kind": "open_collection",
+        "sourceLabel": "本站专题导读",
+        "note": "依据本专题三份图像编写；图像来源和许可分别见各资料详情。",
+        "rightsLabel": "本站原创导读"
+      },
+      "availabilityNote": "可阅读全文、摘录段落，并使用 DeepSeek 阅读辅助。",
+      "rightsStatus": "documented",
+      "contentId": "content-FLASK-GUIDE",
+      "createdAt": "2026-11-12T00:00:00Z"
+    }
+  ],
+  "contents": [
+    {
+      "id": "content-HK-FLASKS",
+      "resourceId": "HK-FLASKS",
+      "versionId": "HK-FLASKS-v1",
+      "kind": "image",
+      "width": 1348,
+      "height": 1800,
+      "label": "香港历史博物馆展柜中的保温瓶",
+      "shapes": [],
+      "warning": "CC0 1.0 · Daderot 摄影。网页展示版保留完整画面，原始文件见来源页。",
+      "asset": "hk-flasks.webp"
+    },
+    {
+      "id": "content-FLASK-PARTS",
+      "resourceId": "FLASK-PARTS",
+      "versionId": "FLASK-PARTS-v1",
+      "kind": "image",
+      "width": 1500,
+      "height": 1200,
+      "label": "保温瓶的外壳与玻璃内胆",
+      "shapes": [],
+      "warning": "作者 Julo 将照片释入公有领域。网页展示版保留完整画面，原始文件见来源页。",
+      "asset": "flask-parts.webp"
+    },
+    {
+      "id": "content-THERMOS-AD",
+      "resourceId": "THERMOS-AD",
+      "versionId": "THERMOS-AD-v1",
+      "kind": "image",
+      "width": 960,
+      "height": 1399,
+      "label": "Thermos the Bottle｜加拿大杂志广告",
+      "shapes": [],
+      "warning": "文件页标注为美国公有领域（PD-US-expired）。网页展示版保留完整画面，原始文件见来源页。",
+      "asset": "thermos-ad.webp"
+    },
+    {
+      "id": "content-FLASK-GUIDE",
+      "resourceId": "FLASK-GUIDE",
+      "versionId": "FLASK-GUIDE-v1",
+      "kind": "text",
+      "paragraphs": [
+        {
+          "id": "para-1",
+          "text": "先看香港历史博物馆的展柜照片。前排几只保温瓶的瓶盖有深有浅，瓶身也有高矮之分。做第一条笔记时，可以写清观察对象在画面中的位置，例如“前排右侧的红色瓶身”，再描述它与相邻器物的差别。照片拍于 2014 年；要确定器物何时制造，还需要核对展签或馆藏记录。"
+        },
+        {
+          "id": "para-2",
+          "text": "再看 Julo 的拆解照片。左侧完整保温瓶给出了装配状态，右侧的红色外壳与反光玻璃内胆已经分开。可以先标出完整瓶上露出的瓶口，再在拆开的部件中寻找相应位置。单张照片足以支持对位置和外表的描述，若要判断密封效果或保温时间，还需要结构说明或测量记录。"
+        },
+        {
+          "id": "para-3",
+          "text": "最后看《Thermos the Bottle》广告。瓶身旁的文字把“热”与“冷”分别对应到时长，底部的携带盒则把保温瓶放入出行情境。这些信息可以用来研究广告怎样介绍产品。若要评价产品的实际性能，应把广告中的数字与独立的测试材料分开记录。"
+        },
+        {
+          "id": "para-4",
+          "text": "为广告注明出处时要保留一个疑问：文件题名及日期栏写作 1909 年，来源栏却指向《Rod and Gun in Canada》1920 年 10 月第 567 页。在看到原刊封面、目录或连续页码之前，可把两条线索同时写进笔记，暂不指定确切刊期。"
+        }
+      ],
+      "warning": "本站依据专题图像编写的中文导读。引用时请标明导读段落；原始图像可从专题中打开。"
+    }
+  ],
+  "topics": [
+    {
+      "id": "vacuum-flasks",
+      "title": "保温瓶：从展柜到广告页",
+      "question": "同一类器物在展柜、拆解照片和商品广告里，分别呈现了哪些信息？",
+      "intro": "从香港历史博物馆展柜中的瓶盖和瓶身开始，再看拆开的玻璃内胆。最后翻到杂志广告，比较实物照片能呈现的细节与商家强调的用途。",
+      "resourceIds": [
+        "HK-FLASKS",
+        "FLASK-PARTS",
+        "THERMOS-AD",
+        "FLASK-GUIDE"
+      ],
+      "isDemoCuration": false,
+      "status": "published"
+    }
+  ]
+}

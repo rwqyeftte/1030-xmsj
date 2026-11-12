@@ -17,7 +17,7 @@
 .discovery-page .topic-card .row { margin-bottom: 22px; }
 .discovery-page .topic-card > a:last-child { display: inline-block; margin-top: 12px; }
 .discovery-page .discovery-footer { margin-top: 84px; padding: 24px 0 0; }
-.discovery-page[data-page-id="P02"] .search-box form > .toolbar { justify-content: space-between; }
+.discovery-page[data-page-id="P02"] .search-box .search-inputs > .toolbar { justify-content: space-between; }
 .discovery-page[data-page-id="P02"] .strategy-list { padding-bottom: 0; }
 .discovery-page[data-page-id="P03"] .search-strip .search-actions-spacer { flex: 1; }
 .discovery-page[data-page-id="P03"] .result-tools { padding-bottom: 0; border-bottom: 1px solid var(--line, #d8d8d5); }
@@ -87,3 +87,5 @@
   .discovery-page[data-page-id="P04"] .recommendation-masonry { grid-template-columns: 1fr; }
   .discovery-page .selected-resource-list li { flex-direction: column; }
 }
+
+.search-box .search-inputs { border: 0; padding: 0; margin: 0; min-width: 0; }

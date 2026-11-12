@@ -96,7 +96,9 @@ try{
     const origin=page.url();await page.getByRole('button',{name:'文献对照',exact:true}).click();
     const dialog=page.getByRole('dialog');await expect(dialog).toHaveAccessibleName('选择对照资料');assert.equal(page.url(),origin);
     await expect(dialog.getByRole('button',{name:'开始对照',exact:true})).toBeDisabled();await expect(dialog.locator('input:checked')).toHaveCount(0);
-    await expect(dialog.locator('input[value="DEMO-TEXT"]')).toHaveCount(0);await expect(dialog.locator('input[value="B01"]')).toHaveCount(0);
+    await expect(dialog.locator('input[value="DEMO-TEXT"]')).toHaveCount(0);await expect(dialog.locator('input[value="DEMO-RESTRICTED"]')).toHaveCount(0);
+    await expect(dialog.locator('input[value="I05"]')).toHaveCount(1);
+    await expect(dialog.locator('input[value="B01"]')).toHaveCount(1);
     await dialog.getByRole('button',{name:'取消',exact:true}).click();assert.equal(page.url(),origin);await expect(page.getByLabel('笔记标题',{exact:true})).toHaveValue('对照前的观察');
     await page.getByRole('button',{name:'文献对照',exact:true}).click();
     await dialog.getByLabel('查找对照资料',{exact:true}).fill('完全没有的题名');await expect(dialog.getByRole('radio')).toHaveCount(0);await expect(dialog.getByRole('button',{name:'开始对照',exact:true})).toBeDisabled();
@@ -116,7 +118,7 @@ try{
     await page.keyboard.press('Escape');await expect(dialog).toHaveCount(0);await expect(page.getByRole('button',{name:'文献对照',exact:true})).toBeFocused();
     await page.goto(base+'/compare?left=DEMO-TEXT');await expect(page.getByLabel('右侧资料',{exact:true})).toHaveValue('');await expect(page.getByTestId('reader-content')).toHaveCount(1);await expect(page.getByRole('heading',{name:'请选择右侧资料',exact:true})).toBeVisible();
     await page.goto(base+'/compare');await expect(page.getByLabel('左侧资料',{exact:true})).toHaveValue('');await expect(page.getByLabel('右侧资料',{exact:true})).toHaveValue('');await expect(page.getByTestId('reader-content')).toHaveCount(0);
-    sample.resources.filter(r=>r.id!=='DEMO-TEXT').forEach(r=>r.access='metadata_only');await page.evaluate(d=>localStorage.setItem('literature-center:v1:data',JSON.stringify(d)),sample);
+    sample.resources.filter(r=>r.id!=='DEMO-TEXT').forEach(r=>r.access='restricted');await page.evaluate(d=>localStorage.setItem('literature-center:v1:data',JSON.stringify(d)),sample);
     await page.goto(base+'/resources/DEMO-TEXT/read');await page.reload();await page.getByRole('button',{name:'文献对照',exact:true}).click();await expect(dialog.getByRole('status')).toHaveText('暂无其他可读资料可供对照。');await expect(dialog.getByRole('button',{name:'开始对照',exact:true})).toBeDisabled();
   });
   await check('native mouse selection, no whole-paragraph fallback, save and exact return',async page=>{

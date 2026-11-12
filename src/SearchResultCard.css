@@ -1,0 +1,171 @@
+.search-record {
+  color: var(--ink);
+  min-width: 0;
+  position: relative;
+  overflow-wrap: anywhere;
+  background: #fff;
+}
+.search-record-list {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(16px,2vw,28px);
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+.search-record-list[data-selected] {
+  background: linear-gradient(90deg,transparent, var(--ground) 20%, var(--ground) 82%, transparent);
+}
+.search-record-cover {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  background: #f2f2f2;
+  border: 1px solid #e1e1e1;
+}
+.search-record-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  object-fit: contain;
+}
+.search-record-list .search-record-cover {
+  flex: 0 0 clamp(112px,11vw,155px);
+  aspect-ratio: 1 / 1.04;
+  padding: 7px;
+}
+.search-record-content {
+  display: flex;
+  flex-flow: column;
+  flex: 1;
+  min-width: 0;
+}
+.search-record-register,
+.search-record-metadata,
+.search-record-actions,
+.search-record-summary {
+  font-family: var(--sans, "Microsoft YaHei", sans-serif);
+}
+.search-record-register {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3px 9px;
+  color: #595959;
+  font-size: 12px;
+}
+.search-record-register .search-record-type {
+  color: var(--ink);
+  font-weight: 650;
+}
+.search-record-code { font-variant-numeric: tabular-nums; letter-spacing: .025em; }
+.search-record-select {
+  min-height: 28px;
+  padding: 3px;
+  margin: -3px -3px -3px auto;
+  cursor: pointer;
+}
+.search-record-select input[type=checkbox] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--ink);
+  cursor: pointer;
+}
+.results-page .search-record-title {
+  font-family: var(--serif);
+  font-size: clamp(19px,1.55vw,24px);
+  line-height: 1.45;
+  letter-spacing: 0;
+  margin: 6px 0 5px;
+}
+.search-record-title a { color: inherit; text-decoration: none; }
+.search-record-title a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: .2em; }
+.search-record-metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin: 0;
+  color: #626262;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.search-record-metadata span + span { border-left: 1px solid var(--line); padding-left: 12px; }
+.search-record-summary {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #444;
+  margin: 9px 0 0;
+}
+.search-record-summary a {
+  font-size: 12px;
+  color: var(--ink);
+  margin-left: 6px;
+  text-decoration: underline;
+  text-underline-offset: .18em;
+}
+.search-record mark {
+  background: #dedede;
+  color: #151515;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.search-record-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 14px;
+  padding-top: 10px;
+  margin-top: auto;
+}
+.search-record-actions > button, .search-record-actions > a {
+  display: inline-flex;
+  align-items: center;
+  color: #4c4c4c;
+  border: 0;
+  border-radius: 0;
+  font-size: 13px;
+  background: transparent;
+  text-decoration: none;
+  min-height: 32px;
+  padding: 2px 0;
+}
+.search-record-actions > button:hover, .search-record-actions > a:hover {
+  color: var(--ink);
+  background: transparent;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+.search-record-actions .search-record-read { color: var(--ink); font-weight: 650; }
+.search-record-grid {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+}
+.search-record-grid[data-selected] { border-color: var(--ink); }
+.search-record-grid .search-record-cover {
+  width: 100%;
+  height: clamp(145px,15vw,210px);
+  padding: 12px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+}
+.search-record-grid .search-record-content { padding: 15px; }
+.results-page .search-record-grid .search-record-title { font-size: 19px; }
+@media (max-width: 600px) {
+  .search-record-list { display: flow-root; padding: 16px 0; }
+  .search-record-list .search-record-cover {
+    width: 76px;
+    height: 86px;
+    float: right;
+    padding: 4px;
+    margin: 2px 0 6px 12px;
+  }
+  .search-record-list .search-record-content { display: block; }
+  .search-record-list .search-record-register { min-height: 25px; }
+  .search-record-list .search-record-summary { clear: both; }
+  .search-record-actions { gap: 2px 15px; padding-top: 5px; }
+  .search-record-actions > button, .search-record-actions > a { min-height: 38px; }
+  .search-record-grid .search-record-cover { height: 160px; }
+}

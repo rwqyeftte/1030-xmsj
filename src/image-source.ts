@@ -1,4 +1,6 @@
 import {useEffect,useState} from 'react';
+import {featuredMaterial} from './featured';
+import {collectionImage} from './collection-images';
 import {readLocalBlob} from './imports';
 import {useApp} from './store';
 export function useImageSource(resourceId:string){
@@ -12,5 +14,7 @@ export function useImageSource(resourceId:string){
     if(key)readLocalBlob(key).then(blob=>{if(!live)return;if(blob){url=URL.createObjectURL(blob);setSource({url,loading:false,missing:false});}else setSource({url:'',loading:false,missing:true});}).catch(()=>{if(live)setSource({url:'',loading:false,missing:true});});
     return()=>{live=false;if(url)URL.revokeObjectURL(url);};
   },[resourceId,key,required]);
-  return source;
+  const material=resource&&featuredMaterial(resource);
+  const asset=material?.mediaType==='image'?material.file:collectionImage(resourceId);
+  return asset ? {url:asset,loading:false,missing:false} : source;
 }

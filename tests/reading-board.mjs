@@ -1,0 +1,76 @@
+import assert from 'node:assert/strict';
+import {expect} from '@playwright/test';
+import {selectText} from './text-selection.mjs';
+
+// Use a fresh visitor so the sample research does not alter the other browser flows.
+export async function readingBoardJourney(browser,base,inspect){
+  const context=await browser.newContext({viewport:{width:1440,height:900}});
+  const page=await context.newPage();
+  page.setDefaultTimeout(6500);
+  const title='包装如何讲述品牌故事';
+  const observation='对照包装图像时，我想区分包装讲了什么故事，以及它用什么图形来讲。';
+  const state=()=>page.evaluate(()=>JSON.parse(localStorage.getItem('literature-center:v1:data')));
+  try{
+    await page.goto(base+'/resources/A02/read?view=text');
+    const outline=page.getByRole('complementary',{name:'本篇结构'});
+    const section=outline.getByRole('button',{name:/2\.1\s*叙事主题/});
+    const toggle=page.getByRole('button',{name:'本篇结构',exact:true});
+    await expect(toggle).toBeVisible();
+    if(await toggle.getAttribute('aria-expanded')==='false')await toggle.click();
+    await section.click();
+    await expect(section).toHaveAttribute('aria-current','location');
+    await expect(outline.getByRole('button',{name:/2\.2/})).toHaveCount(0);
+    const viewer=page.getByTestId('reader-content');
+    const paragraph=viewer.locator('[data-text-paragraph="A02-p2-theme"]');
+    const index=await paragraph.evaluate(el=>Array.from(el.closest('article').querySelectorAll('[data-text-paragraph]')).indexOf(el));
+    const source=await paragraph.innerText(),start=source.indexOf('“外在主题”指的是');
+    assert.ok(start>=0);
+    const quote=await selectText(viewer,index,start,index,source.indexOf('。',start)+1);
+    await viewer.getByRole('button',{name:'记笔记',exact:true}).click();
+    await page.getByLabel('笔记标题',{exact:true}).fill(title);
+    await page.getByLabel('我的观察与解释',{exact:true}).fill(observation);
+    const place=page.getByRole('button',{name:'放到项目画布',exact:true});
+    const before=await state();
+    await place.click();
+    const picker=page.getByRole('dialog');
+    await picker.getByRole('button',{name:'取消',exact:true}).click();
+    await expect(page.getByLabel('我的观察与解释',{exact:true})).toHaveValue(observation);
+    assert.deepEqual(await state(),before);
+    await place.click();
+    const projectTitle='老字号包装研究';
+    await picker.getByLabel('或新建项目').fill(projectTitle);
+    await picker.getByRole('button',{name:/确认|放到画布|放入画布/}).click();
+    const open=page.getByRole('link',{name:/^查看画布卡片/});
+    await expect(open).toBeVisible();
+    const projectId=(await state()).projects.find(p=>p.title===projectTitle)?.id;
+    assert.ok(projectId);
+    await page.getByRole('button',{name:'放到其他项目',exact:true}).click();
+    await picker.getByRole('combobox').selectOption(projectId);
+    await picker.getByRole('button',{name:'放入画布',exact:true}).click();
+    await expect(picker).toHaveCount(0);
+    const saved=await state(),note=saved.notes.find(n=>n.title===title);
+    assert.ok(note);assert.equal(saved.notes.filter(n=>n.title===title).length,1);
+    const placements=saved.boardNodes.filter(n=>n.projectId===projectId&&n.ref.kind==='note'&&n.ref.id===note.id);
+    assert.equal(placements.length,1);
+    await open.click();
+    const panel=page.getByTestId('context-panel');
+    await expect(panel).toContainText(quote);
+    await expect(panel).toContainText(/2\.1\s*叙事主题/);
+    await expect(panel).toContainText(observation);
+    const node=page.getByTestId('board-node-'+placements[0].id);
+    await panel.getByRole('button',{name:'关闭任务面板',exact:true}).click();
+    await expect(panel).toHaveCount(0);
+    await node.click();
+    await expect(panel).toContainText(observation);
+    await panel.getByRole('link',{name:/^回到原文/}).click();
+    await expect(viewer.locator('[data-text-paragraph="A02-p2-theme"] mark')).toHaveText(quote);
+    await page.getByRole('link',{name:'返回原工作版位置',exact:true}).click();
+    await expect(panel).toContainText(quote);
+    await page.reload();
+    await expect(panel).toContainText(observation);
+    await page.setViewportSize({width:390,height:844});
+    await expect(panel.getByRole('link',{name:/^回到原文/})).toBeVisible();
+    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1));
+    if(inspect)await inspect(page,node,panel);
+  }finally{await context.close();}
+}
