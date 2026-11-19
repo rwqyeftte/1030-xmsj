@@ -147,6 +147,9 @@
   .reader-page .reader-layout > .resource-viewer,
   .reader-page .reader-layout > aside { height: auto; overflow-y: visible; }
   .reader-page .reader-layout > .resource-viewer { padding: 10px; }
+  /* These tools follow document scrolling on mobile, below the site navigation. */
+  .reader-page .text-selection-toolbar { top: var(--site-nav-height); }
+  .reader-page .paper-outline { top: calc(var(--site-nav-height) + 64px); }
   .reader-page .paper { padding: 16px; }
   .comparison-options { max-height: 40vh; }
   .reader-page .reader-layout > .resource-viewer[data-content-kind="image"] { height: 75dvh; min-height: 470px; }

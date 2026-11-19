@@ -192,13 +192,58 @@
 .personal-page [data-testid="save-status"] { font-size: 12px; color: var(--muted); }
 
 /* P13: project cards echo a collection shelf, with measured typography. */
-.personal-page .continue-research.panel {
-  border-width: 1px 0;
-  border-color: var(--ink);
-  background: transparent;
-  padding: 26px 0;
-  margin-bottom: 30px;
+.projects-page > .page-head {
+  min-height: 200px;
+  padding: 8px 0 52px;
+  margin-bottom: 56px;
 }
+.personal-page .continue-research.panel {
+  position: relative;
+  display: block;
+  border: 0;
+  border-radius: 12px;
+  background: var(--paper);
+  padding: 26px 34px 26px 62px;
+  margin-bottom: 36px;
+  color: var(--ink);
+  text-decoration: none;
+  cursor: pointer;
+  transition: box-shadow 180ms ease;
+}
+@media (hover: hover) {
+  .personal-page .continue-research.panel:hover {
+    box-shadow: 0 6px 22px rgb(0 0 0 / 8%);
+  }
+}
+.personal-page .continue-research.panel:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+  box-shadow: 0 6px 22px rgb(0 0 0 / 8%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .personal-page .continue-research.panel { transition: none; }
+}
+.continue-research.panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 34px;
+  border-radius: 12px 5px 5px 12px;
+  background: var(--ink);
+  pointer-events: none;
+}
+.continue-research-body {
+  min-width: 0;
+  padding: 4px 0 4px 28px;
+  border-left: 1px solid #e0e0de;
+}
+.continue-research-heading { margin-bottom: 16px; }
+.continue-research-heading .eyebrow { display: block; margin: 0; }
+.continue-research-copy { min-width: 0; }
+.continue-research .continue-research-copy h2 { margin: 0 0 16px; }
+.continue-research-copy p { margin-bottom: 20px; }
 .continue-research h2 { font-family: var(--serif); font-size: 26px; font-weight: 400; margin: 11px 0; }
 .continue-research p { font-size: 13px; color: #555; }
 .continue-research small { font-size: 12px; color: var(--muted); }
@@ -299,6 +344,8 @@
   .personal-nav nav a.active { border-bottom-color: var(--ink); }
   .personal-page { padding: 26px 18px 40px; }
   .personal-page > .page-head { padding-bottom: 23px; margin-bottom: 24px; align-items: flex-start; }
+  .projects-page > .page-head { min-height: 0; padding: 8px 0 36px; margin-bottom: 40px; }
+  .projects-page > .page-head > .primary { margin-top: 20px; }
   .personal-page > .page-head h1 { font-size: 28px; }
   .personal-page > .page-head p:last-child { line-height: 1.8; }
   .personal-page > .page-head > .row { margin-top: 14px; gap: 8px; }
@@ -323,7 +370,9 @@
 @media (max-width: 700px) {
   .library-layout { display: block; }
   .collection-sidebar.panel { border-right: 0; border-bottom: 1px solid var(--line); padding: 0 0 20px; margin-bottom: 24px; }
-  .personal-page .continue-research.panel { padding: 24px 0; }
+  .personal-page .continue-research.panel { padding: 24px 22px 24px 38px; border-radius: 10px; }
+  .continue-research.panel::before { width: 18px; border-radius: 10px 4px 4px 10px; }
+  .continue-research-body { padding-left: 16px; }
   .personal-page .resource-foot { padding-bottom: 14px; }
   .personal-resource-grid .resource-foot { padding: 12px 18px; }
   .personal-page .resource-info h3 { font-size: 19px; }
@@ -376,9 +425,7 @@
 .project-status-filter button { min-height: 40px; min-width: 90px; border: 0; padding: 8px 18px; }
 .project-status-filter button + button { border-left: 1px solid var(--line); }
 .project-status-filter button:focus-visible { position: relative; z-index: 1; }
-.continue-research h2 a,
 .plan-material h3 a { color: inherit; text-decoration: none; }
-.continue-research h2 a:hover,
 .plan-material h3 a:hover { text-decoration: underline; }
 .plan-main > .toolbar { justify-content: space-between; }
 .plan-main textarea { min-height: 454px; }
